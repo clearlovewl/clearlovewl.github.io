@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="pytorch,GAN,">
+  <meta name="keywords" content="pytorch,IQA,">
 
 
 
@@ -79,26 +79,18 @@
 
 
 
-<meta name="description" content="MIDINET">
-<meta name="keywords" content="pytorch,GAN">
+<meta name="description" content="densenet image quality assessment">
+<meta name="keywords" content="pytorch,IQA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION">
-<meta property="og:url" content="http://yoursite.com/2018/11/20/midinet/index.html">
+<meta property="og:title" content="record the experiment">
+<meta property="og:url" content="http://yoursite.com/2018/11/21/QDNN/index.html">
 <meta property="og:site_name" content="wl-uestc">
-<meta property="og:description" content="MIDINET">
+<meta property="og:description" content="densenet image quality assessment">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/midinet/midinet.png">
-<meta property="og:image" content="http://yoursite.com/midinet/midinet.png">
-<meta property="og:image" content="http://yoursite.com/midinet/midinet1.png">
-<meta property="og:image" content="http://yoursite.com/midinet/midinet2.png">
-<meta property="og:image" content="http://yoursite.com/midinet/data.png">
-<meta property="og:image" content="http://yoursite.com/midinet/1d.png">
-<meta property="og:image" content="http://yoursite.com/midinet/result.png">
-<meta property="og:updated_time" content="2018-11-20T10:20:38.281Z">
+<meta property="og:updated_time" content="2019-01-15T05:53:00.004Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION">
-<meta name="twitter:description" content="MIDINET">
-<meta name="twitter:image" content="http://yoursite.com/midinet/midinet.png">
+<meta name="twitter:title" content="record the experiment">
+<meta name="twitter:description" content="densenet image quality assessment">
 
 
 
@@ -128,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/20/midinet/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/21/QDNN/">
 
 
 
 
 
-  <title>A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION | wl-uestc</title>
+  <title>record the experiment | wl-uestc</title>
   
 
 
@@ -251,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/midinet/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/QDNN/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wang lei">
@@ -268,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION</h1>
+          <h1 class="post-title" itemprop="name headline">record the experiment</h1>
         
 
         <div class="post-meta">
@@ -280,8 +272,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-20T00:00:00+08:00">
-                2018-11-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-21T00:00:00+08:00">
+                2018-11-21
               </time>
             
 
@@ -305,7 +297,7 @@
 
           
               <div class="post-description">
-                  MIDINET
+                  densenet image quality assessment
               </div>
           
 
@@ -323,33 +315,293 @@
 
       
         <blockquote>
-<p><a href="https://clearlovewl.github.io/2018/11/20/midinet/slide.html" target="_blank" rel="noopener">ppt</a></p>
 </blockquote>
-<p><img src="/midinet/midinet.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="500px"   --></p>
 <hr>
-<h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><ol>
-<li>most exisiting neural network models for music generation use recurrent neural networks</li>
-<li>using CNNs and GAN for generating melody</li>
-</ol>
-<p><img src="/midinet/midinet.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="500px"   --></p>
-<p>–</p>
-<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ol>
-<li>Symbolic Representation for Convolution: h -by- w real-valued matrix X</li>
-<li>Generator CNN and Discriminator CNN</li>
-<li>Conditioner CNN</li>
-</ol>
-<p>–<br><img src="/midinet/midinet1.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
-<p>–<br><img src="/midinet/midinet2.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
-<p>–</p>
-<h2 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h2><p><img src="/midinet/data.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
-<p>–</p>
-<p><img src="/midinet/1d.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
-<p>–</p>
-<p>we  crawled  a  collection  of  1,022 midi tabs of pop music from theorytab which providesexactly two channels per tab, one for melody and the otherfor the underlying chord progression.with this dataset, wecan implement at least two versions of midinets: one thatlearns from only the melody channel for fair comparison with  melodyrnn,  which  does  not  use  chords,  andthe other that additionally uses chords to condition melody generation, to test the capacity of midinet.</p>
-<p>–</p>
-<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>result of a user study comparing melodyrnnand  midinet  models,  for  people  (top  row)  with  musicalbackgrounds and (bottom) without musical backgrounds.the middle bars indicate the mean values. please note thatmidinet model 2 takes the chord condition as additional information.</p>
-<p>–</p>
-<p><img src="/midinet/result.png" alt="xiaoguo"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
+<h2 id="RESULT"><a href="#RESULT" class="headerlink" title="RESULT"></a>RESULT</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">ourdata</th>
+<th>100 classes</th>
+<th>1000 classes</th>
+<th>10 classes</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">densenetfenlei</td>
+<td>0.37</td>
+<td>0.19</td>
+<td>0.54</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">densenet+xiaobofenlei</td>
+<td></td>
+<td></td>
+<td>0.29</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">tid</th>
+<th>all</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">densenet</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">densenet + xiaobo</td>
+<td>0.46</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">live</th>
+<th>fastfading+jp2k</th>
+<th>fastfading+jp2k+gblur+wn</th>
+<th style="text-align:left">fastfading+jpeg</th>
+<th>jpeg</th>
+<th>ALL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">densenet</td>
+<td></td>
+<td></td>
+<td style="text-align:left"></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">densenet + xiaobo</td>
+<td>0.93</td>
+<td>0.94</td>
+<td style="text-align:left">0.86</td>
+<td>0.89</td>
+<td>0.83</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ourdata</th>
+<th>25,0.001,7,0.1</th>
+<th>45,0.001,15,0.1</th>
+<th>25,0.001,7,0.5</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">densenetrank</td>
+<td>0.60</td>
+<td>0.63</td>
+<td>0.65,0.64后边再测效果变差了</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">densenet+xiaoborank</td>
+<td>0.53</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">densenetrank+sppmax</td>
+<td></td>
+<td></td>
+<td>0.60 ,-1rank</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">densenetrank+sppavg</td>
+<td></td>
+<td></td>
+<td>0.62 0.65,-1rank</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">densenetrank+sppavg</td>
+<td></td>
+<td></td>
+<td>0.63 0.65,-2rank</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">densenetrank+sppavgcat</td>
+<td></td>
+<td></td>
+<td>0.57,0.63</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left"></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ourdata</th>
+<th>25,0.001,7,0.1</th>
+<th>45,0.001,15,0.1</th>
+<th>25,0.001,7,0.5</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">densenetrank</td>
+<td>0.60</td>
+<td>0.63</td>
+<td>0.65,0.64</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">fpnrank</th>
+<th>Deng17</th>
+<th>Ding16</th>
+<th>Fu17</th>
+<th>Kang12</th>
+<th>Li16,luo15</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">densenetrank</td>
+<td>0.43</td>
+<td>0.45</td>
+<td>0.58</td>
+<td>0.48</td>
+<td>0.50,0.48</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">ourdata</th>
+<th>25,0.001,7,0.1</th>
+<th>45,0.001,15,0.1</th>
+<th>25,0.001,7,0.5</th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">densenetrank</td>
+<td>0.60</td>
+<td>0.63</td>
+<td>0.65,0.64</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">fpnrankdropout</th>
+<th>fpnrankdropoutar</th>
+<th>fpnrank batch 2</th>
+<th>fpnrankar batch 2</th>
+<th>fpnrank 分段 先scorerank12后rank13/fpnrank 分段 先rankscore25后rank10</th>
+<th>先rank再rankscore</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">0.67</td>
+<td>0.54</td>
+<td>0.20</td>
+<td>也很低，batch很重要</td>
+<td>0.56下降0.53/0.60 0.58</td>
+<td>-0.2到0.6</td>
+</tr>
+</tbody>
+</table>
+<p>[5, 11, 13, 15, 22, 26, 35, 38, 43, 45, 48, 50, 51, 53, 55, 59, 61, 77, 79, 83, 86, 91, 99, 105, 117, 123, 124, 127, 139, 140, 152, 154, 157, 158, 161, 167, 168, 170, 182, 187, 191, 201] 0.2 0.3de </p>
+<p>2, 5, 6, 7, 16, 22, 31, 33, 36, 40, 46, 49, 52, 59, 63, 66, 70, 71, 72, 73, 75, 82, 104, 112, 132, 133, 134, 136, 138, 139, 144, 146, 165, 178, 182, 183, 189, 190, 192, 193, 195, 204] 0.65de </p>
+<p>特征加权单个 0.63  </p>
+<p>特征加权多个 0.65  跑第二次 0.61 第三次 0.58 第四次 0.59 预处理+40：0.64 最大 0.66</p>
+<p>谱加权单个 0.58 </p>
+<p>谱加权多个 0.61 预处理+40：0.62</p>
+<p>两种结合 0.60</p>
+<p>向量SSP加权=</p>
+<p>rankfpnquanzhong  40 7 0.5 0.01 向量SSP加权 = 0.41</p>
+<p>rankfpnquanzhong1 40 7 0.5 0.01 向量加权 0.52</p>
+<p>densenetwlrankfpnquanzhong2  0.62最大0.65 ftrrank    融合方式改变 卷积 lossrank*0.001+lossscore0+lossscore1</p>
+<p>lossrank*0.1+lossscore0+lossscore1 0.62 0.64</p>
+<p>lossrank+lossscore0+lossscore1 0.57 0.59</p>
+<p>lossrank×10+lossscore0+lossscore1 不行</p>
+<p>lossrank+lossscore0×0.001+lossscore1×0.001 0.46 0.52</p>
+<p>loss=lossrank+lossscore0 ×0.1+lossscore1×0.1 0.49 0.54</p>
+<p>densenetwlrankfpnquanzhong3  0.62最大0.64 ftrrank    融合方式改变avgpool lossrank*0.001+lossscore0+lossscore1</p>
+<p>densenetwlrankfpnquanzhong3  0.52最大0.62 ftrrank    融合方式改变maxpool lossrank*0.001+lossscore0+lossscore1</p>
+<p>densenetwlrankfpnquanzhong4  0.52最大0.62 ftrrank    融合方式改变gatedpool lossrank*0.01+lossscore0+lossscore1</p>
+<table>
+<thead>
+<tr>
+<th>谱只用4×4的最后一层谱，拉成向量后边加权（乘积）</th>
+<th>不加权了</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.63 最高0.65</td>
+<td>0.60 最高0.65</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>fpnquanzhongdropout 0.61</p>
+<p>rankdropout 0.61</p>
 
       
     </div>
@@ -369,7 +621,7 @@
           
             <a href="/tags/pytorch/" rel="tag"># pytorch</a>
           
-            <a href="/tags/GAN/" rel="tag"># GAN</a>
+            <a href="/tags/IQA/" rel="tag"># IQA</a>
           
         </div>
       
@@ -382,8 +634,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/22/fcn/" rel="next" title="Fully Convolutional Networks for Semantic Segmentation">
-                <i class="fa fa-chevron-left"></i> Fully Convolutional Networks for Semantic Segmentation
+              <a href="/2018/11/20/midinet/" rel="next" title="A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION">
+                <i class="fa fa-chevron-left"></i> A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION
               </a>
             
           </div>
@@ -392,8 +644,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/21/QDNN/" rel="prev" title="record the experiment">
-                record the experiment <i class="fa fa-chevron-right"></i>
+              <a href="/2018/12/12/targeted dropout/" rel="prev" title="TARGETED DROPOUT">
+                TARGETED DROPOUT <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -517,7 +769,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABSTRCT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Datasets"><span class="nav-number">3.</span> <span class="nav-text">Datasets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">4.</span> <span class="nav-text">Results</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RESULT"><span class="nav-number">1.</span> <span class="nav-text">RESULT</span></a></li></ol></div>
             
 
           </div>
