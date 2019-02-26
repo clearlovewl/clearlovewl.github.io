@@ -14,7 +14,7 @@
             var link = document.createElement( 'link' );
             link.rel = 'stylesheet';
             link.type = 'text/css';
-            var theme ='white';
+            var theme ='black';
             switch (theme){
                 case 'black':
                     link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/black.min.css';
@@ -149,7 +149,7 @@ Reveal.initialize({
   // 是否启用幻灯片的概览模式，可使用 "Esc" 或 "o" 键来切换概览模式
   overview: true,
   // 是否将幻灯片垂直居中
-  center: false,
+  center: true,
   // 是否在触屏设备上启用触摸滑动切换
   touch: true,
   // 是否循环演示
@@ -181,7 +181,7 @@ Reveal.initialize({
   // 是否在一个弹出的 iframe 中打开幻灯片中的链接
   previewLinks: false,
   // 切换过渡效果
-  transition: 'slide', // none/fade/slide/convex/concave/zoom
+  transition: 'default', // none/fade/slide/convex/concave/zoom
   // 过渡速度
   transitionSpeed: 'default', // default/fast/slow
   // 全屏幻灯片背景的过渡效果
@@ -199,13 +199,6 @@ Reveal.initialize({
   parallaxBackgroundHorizontal: null,
   parallaxBackgroundVertical: null,
   // More info https://github.com/hakimel/reveal.js#dependencies
-	width: 1600,
-	height: 900,
-
-	// Factor of the display size that should remain empty around the content
-	margin: 0,
-
-
   dependencies: [
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/marked.js' },
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/markdown.min.js' },
