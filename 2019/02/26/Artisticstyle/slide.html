@@ -222,7 +222,7 @@ Reveal.initialize({
   // 过渡速度
   transitionSpeed: 'default', // default/fast/slow
   // 全屏幻灯片背景的过渡效果
-  backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+  backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
   // 加载除当前可见的幻灯片之外的幻灯片数量
   viewDistance: 3,
   // 视差背景图片
@@ -236,8 +236,13 @@ Reveal.initialize({
   parallaxBackgroundHorizontal: null,
   parallaxBackgroundVertical: null,
   // More info https://github.com/hakimel/reveal.js#dependencies
+    math: {
+        mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+        config: 'TeX-AMS_HTML-full'  // See http://docs.mathjax.org/en/latest/config-files.html
+    },
   dependencies: [
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/marked.js' },
+    { src: 'plugin/math/math.js', async: true },
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/markdown.min.js' },
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/notes/notes.min.js', async: true },
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
