@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="pytorch,IQA,">
+  <meta name="keywords" content="pytorch,style transfer,">
 
 
 
@@ -79,18 +79,22 @@
 
 
 
-<meta name="description" content="densenet image quality assessment">
-<meta name="keywords" content="pytorch,IQA">
+<meta name="description" content="A Neural Algorithm of Artistic Style">
+<meta name="keywords" content="pytorch,style transfer">
 <meta property="og:type" content="article">
-<meta property="og:title" content="record the experiment">
-<meta property="og:url" content="http://yoursite.com/2018/11/21/QDNN/index.html">
+<meta property="og:title" content="A Neural Algorithm of Artistic Style">
+<meta property="og:url" content="http://yoursite.com/2019/02/26/Artisticstyle/index.html">
 <meta property="og:site_name" content="wl-uestc">
-<meta property="og:description" content="densenet image quality assessment">
+<meta property="og:description" content="A Neural Algorithm of Artistic Style">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-01-15T05:53:00.004Z">
+<meta property="og:image" content="http://yoursite.com/Artisticstyle/1.png">
+<meta property="og:image" content="http://yoursite.com/Artisticstyle/1.png">
+<meta property="og:image" content="http://yoursite.com/Artisticstyle/2.png">
+<meta property="og:updated_time" content="2019-02-27T09:39:38.257Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="record the experiment">
-<meta name="twitter:description" content="densenet image quality assessment">
+<meta name="twitter:title" content="A Neural Algorithm of Artistic Style">
+<meta name="twitter:description" content="A Neural Algorithm of Artistic Style">
+<meta name="twitter:image" content="http://yoursite.com/Artisticstyle/1.png">
 
 
 
@@ -120,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/21/QDNN/">
+  <link rel="canonical" href="http://yoursite.com/2019/02/26/Artisticstyle/">
 
 
 
 
 
-  <title>record the experiment | wl-uestc</title>
+  <title>A Neural Algorithm of Artistic Style | wl-uestc</title>
   
 
 
@@ -243,7 +247,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/QDNN/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/Artisticstyle/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wang lei">
@@ -260,7 +264,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">record the experiment</h1>
+          <h1 class="post-title" itemprop="name headline">A Neural Algorithm of Artistic Style</h1>
         
 
         <div class="post-meta">
@@ -272,8 +276,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-21T00:00:00+08:00">
-                2018-11-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-26T00:00:00+08:00">
+                2019-02-26
               </time>
             
 
@@ -297,7 +301,7 @@
 
           
               <div class="post-description">
-                  densenet image quality assessment
+                  A Neural Algorithm of Artistic Style
               </div>
           
 
@@ -315,293 +319,42 @@
 
       
         <blockquote>
+<p><a href="https://clearlovewl.github.io/2019/02/26/Artisticstyle/slide.html" target="_blank" rel="noopener">ppt</a></p>
 </blockquote>
+<p><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="500px"   --></p>
 <hr>
-<h2 id="RESULT"><a href="#RESULT" class="headerlink" title="RESULT"></a>RESULT</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">ourdata</th>
-<th>100 classes</th>
-<th>1000 classes</th>
-<th>10 classes</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">densenetfenlei</td>
-<td>0.37</td>
-<td>0.19</td>
-<td>0.54</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">densenet+xiaobofenlei</td>
-<td></td>
-<td></td>
-<td>0.29</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">tid</th>
-<th>all</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">densenet</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">densenet + xiaobo</td>
-<td>0.46</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">live</th>
-<th>fastfading+jp2k</th>
-<th>fastfading+jp2k+gblur+wn</th>
-<th style="text-align:left">fastfading+jpeg</th>
-<th>jpeg</th>
-<th>ALL</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">densenet</td>
-<td></td>
-<td></td>
-<td style="text-align:left"></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">densenet + xiaobo</td>
-<td>0.93</td>
-<td>0.94</td>
-<td style="text-align:left">0.86</td>
-<td>0.89</td>
-<td>0.83</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ourdata</th>
-<th>25,0.001,7,0.1</th>
-<th>45,0.001,15,0.1</th>
-<th>25,0.001,7,0.5</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">densenetrank</td>
-<td>0.60</td>
-<td>0.63</td>
-<td>0.65,0.64后边再测效果变差了</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">densenet+xiaoborank</td>
-<td>0.53</td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">densenetrank+sppmax</td>
-<td></td>
-<td></td>
-<td>0.60 ,-1rank</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">densenetrank+sppavg</td>
-<td></td>
-<td></td>
-<td>0.62 0.65,-1rank</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">densenetrank+sppavg</td>
-<td></td>
-<td></td>
-<td>0.63 0.65,-2rank</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left">densenetrank+sppavgcat</td>
-<td></td>
-<td></td>
-<td>0.57,0.63</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td style="text-align:left"></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ourdata</th>
-<th>25,0.001,7,0.1</th>
-<th>45,0.001,15,0.1</th>
-<th>25,0.001,7,0.5</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">densenetrank</td>
-<td>0.60</td>
-<td>0.63</td>
-<td>0.65,0.64</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">fpnrank</th>
-<th>Deng17</th>
-<th>Ding16</th>
-<th>Fu17</th>
-<th>Kang12</th>
-<th>Li16,luo15</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">densenetrank</td>
-<td>0.43</td>
-<td>0.45</td>
-<td>0.58</td>
-<td>0.48</td>
-<td>0.50,0.48</td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">ourdata</th>
-<th>25,0.001,7,0.1</th>
-<th>45,0.001,15,0.1</th>
-<th>25,0.001,7,0.5</th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">densenetrank</td>
-<td>0.60</td>
-<td>0.63</td>
-<td>0.65,0.64</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">fpnrankdropout</th>
-<th>fpnrankdropoutar</th>
-<th>fpnrank batch 2</th>
-<th>fpnrankar batch 2</th>
-<th>fpnrank 分段 先scorerank12后rank13/fpnrank 分段 先rankscore25后rank10</th>
-<th>先rank再rankscore</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">0.67</td>
-<td>0.54</td>
-<td>0.20</td>
-<td>也很低，batch很重要</td>
-<td>0.56下降0.53/0.60 0.58</td>
-<td>-0.2到0.6</td>
-</tr>
-</tbody>
-</table>
-<p>[5, 11, 13, 15, 22, 26, 35, 38, 43, 45, 48, 50, 51, 53, 55, 59, 61, 77, 79, 83, 86, 91, 99, 105, 117, 123, 124, 127, 139, 140, 152, 154, 157, 158, 161, 167, 168, 170, 182, 187, 191, 201] 0.2 0.3de </p>
-<p>2, 5, 6, 7, 16, 22, 31, 33, 36, 40, 46, 49, 52, 59, 63, 66, 70, 71, 72, 73, 75, 82, 104, 112, 132, 133, 134, 136, 138, 139, 144, 146, 165, 178, 182, 183, 189, 190, 192, 193, 195, 204] 0.65de </p>
-<p>特征加权单个 0.63  </p>
-<p>特征加权多个 0.65  跑第二次 0.61 第三次 0.58 第四次 0.59 预处理+40：0.64 最大 0.66</p>
-<p>谱加权单个 0.58 </p>
-<p>谱加权多个 0.61 预处理+40：0.62</p>
-<p>两种结合 0.60</p>
-<p>向量SSP加权=</p>
-<p>rankfpnquanzhong  40 7 0.5 0.01 向量SSP加权 = 0.41</p>
-<p>rankfpnquanzhong1 40 7 0.5 0.01 向量加权 0.52</p>
-<p>densenetwlrankfpnquanzhong2  0.62最大0.65 ftrrank    融合方式改变 卷积 lossrank*0.001+lossscore0+lossscore1</p>
-<p>lossrank*0.1+lossscore0+lossscore1 0.62 0.64</p>
-<p>lossrank+lossscore0+lossscore1 0.57 0.59</p>
-<p>lossrank×10+lossscore0+lossscore1 不行</p>
-<p>lossrank+lossscore0×0.001+lossscore1×0.001 0.46 0.52</p>
-<p>loss=lossrank+lossscore0 ×0.1+lossscore1×0.1 0.49 0.54</p>
-<p>densenetwlrankfpnquanzhong3  0.62最大0.64 ftrrank    融合方式改变avgpool lossrank*0.001+lossscore0+lossscore1</p>
-<p>densenetwlrankfpnquanzhong3  0.52最大0.62 ftrrank    融合方式改变maxpool lossrank*0.001+lossscore0+lossscore1</p>
-<p>densenetwlrankfpnquanzhong4  0.52最大0.62 ftrrank    融合方式改变gatedpool lossrank*0.01+lossscore0+lossscore1</p>
-<table>
-<thead>
-<tr>
-<th>谱只用4×4的最后一层谱，拉成向量后边加权（乘积）</th>
-<th>不加权了</th>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0.63 最高0.65</td>
-<td>0.60 最高0.65</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p>fpnquanzhongdropout 0.61</p>
-<p>rankdropout 0.61</p>
+<h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><ol>
+<li>在美术方面，特别是绘画中，人类已经掌握了创造的经验的技巧，在形象的内容和风格之间形成了复杂的体验。到目前为止，这一过程的基础是相似的，并且没有类似能力的人工系统。thus far the algorithmic basis of this process is unknown and there exists no artificial system with similar capabilities.然而，在视觉感知的其他关键领域，如检测和人脸识别，深度网络有接近人类的表现。</li>
+<li>here we introduce an artificial system based on a deep neural network that creates artistic images providing a neural algorithm for the creation of artistic images</li>
+<li>our work offers a path forward to an algorithmic under-standing of how humans create and perceive artistic imagery</li>
+</ol>
+<p>–</p>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ol>
+<li><p>a layer with nl distinct filters has nl feature maps each of size ml，where Ml is the height times the width of the feature map.</p>
+</li>
+<li><p>so the responses in a layer l can be stored in a matrix fl∈rnl×ml where flij is the activation of the ith filter at position j in layer l</p>
+</li>
+<li><p>so let~p and ~x be the original image and the image that is generated and pl and fl their respective feature representation in layer l.  we then define the squared-error loss between the two feature representations<br>$$<br>\mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } , l ) = \frac { 1 } { 2 } \sum _ { i , j } \left( F _ { i j } ^ { l } - P _ { i j } ^ { l } \right) ^ { 2 }<br>$$</p>
+</li>
+<li><p>these feature correlations are given by the gram matrix $G ^ { l } \in \mathcal { R } ^ { N _ { l } \times N _ { l } }$  where  $G _ { i j } ^ { l }$ is the inner product between the feature map i and j in layer l  :</p>
+<p>$G _ { i j } ^ { l } = \sum _ { k } F _ { i k } ^ { l } F _ { j k } ^ { l }$</p>
+</li>
+<li><p>so let $\vec { a }$ and $\vec { x }$ be the original image and the image that is generated and $A ^ { l }$  and   $G$ their respective style representations in layer l.  the contribution of that layer to the total loss is then  </p>
+<p>$E _ { l } = \frac { 1 } { 4 N _ { l } ^ { 2 } M _ { l } ^ { 2 } } \sum _ { i , j } \left( G _ { i j } ^ { l } - A _ { i j } ^ { l } \right) ^ { 2 }​$  </p>
+<p>and the total loss is</p>
+<p> $\mathcal { L } _ { s t y l e } ( \vec { a } , \vec { x } ) = \sum _ { l = 0 } ^ { L } w _ { l } E _ { l }​$ </p>
+</li>
+<li><p>so let $\vec { p }$  be the photograph and $\vec { a }$ be the artwork. the loss function we minimise is </p>
+<p>$\mathcal { L } _ { \text {total} } ( \vec { p } , \vec { a } , \vec { x } ) = \alpha \mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } ) + \beta \mathcal { L } _ { \text {style} } ( \vec { a } , \vec { x } )​$</p>
+<p>whereαandβare the weighting factors for content and style reconstruction respectively</p>
+</li>
+</ol>
+<p>–<br><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
+<p>–</p>
+<p>–</p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>fig 2 shows results for different relative weightings of the content and style reconstruction loss (along the columns) and for matching the style representations only on layer ‘conv11’ (a), ‘conv11’ and ‘conv21’ (b), ‘conv11’, ‘conv21’ and ‘conv31’ (c),‘conv11’, ‘conv21’, ‘conv31’ and ‘conv41’ (d), ‘conv11’, ‘conv21’, ‘conv31’, ‘conv41’and ‘conv51’ (e). </p>
+<p>–</p>
+<p><img src="/Artisticstyle/2.png" alt="2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
 
       
     </div>
@@ -621,7 +374,7 @@
           
             <a href="/tags/pytorch/" rel="tag"># pytorch</a>
           
-            <a href="/tags/IQA/" rel="tag"># IQA</a>
+            <a href="/tags/style-transfer/" rel="tag"># style transfer</a>
           
         </div>
       
@@ -643,10 +396,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/12/targeted dropout/" rel="prev" title="TARGETED DROPOUT">
-                TARGETED DROPOUT <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -723,7 +472,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -736,7 +485,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -769,7 +518,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#RESULT"><span class="nav-number">1.</span> <span class="nav-text">RESULT</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABSTRCT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">3.</span> <span class="nav-text">Results</span></a></li></ol></div>
             
 
           </div>

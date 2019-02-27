@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>TARGETED DROPOUT</title>
+        <title>A Neural Algorithm of Artistic Style</title>
 
         <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/css/reveal.min.css">
         
@@ -64,64 +64,77 @@
                          data-separator="^\n---\n"
                          data-separator-vertical="^\n--\n"
                          data-separator-notes="^Note:">
-                    <script type="text/template">TARGETED DROPOUT
+                    <script type="text/template">A Neural Algorithm of Artistic Style
 
+
+> [ppt]( https://clearlovewl.github.io/2019/02/26/Artisticstyle/slide.html)
+
+![1](/Artisticstyle/1.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="500px"   -->
 
 
 
 ---
 ## ABSTRCT
-1. neural networks are extremely flexible models due to their large number of parameters.
-2. is beneficial for learning but also highly redundant .
-3. targeted dropout 
+
+
+1. 在美术方面，特别是绘画中，人类已经掌握了创造的经验的技巧，在形象的内容和风格之间形成了复杂的体验。到目前为止，这一过程的基础是相似的，并且没有类似能力的人工系统。thus far the algorithmic basis of this process is unknown and there exists no artificial system with similar capabilities.然而，在视觉感知的其他关键领域，如检测和人脸识别，深度网络有接近人类的表现。
+2. here we introduce an artificial system based on a deep neural network that creates artistic images providing a neural algorithm for the creation of artistic images
+3. our work offers a path forward to an algorithmic under-standing of how humans create and perceive artistic imagery
 
 
 
-![fcn](/midinet/midinet.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" height="500px"   -->
+
 
 --
 
 ## Methods
-1. Symbolic Representation for Convolution: h -by- w real-valued matrix X
-2. Generator CNN and Discriminator CNN
-3. Conditioner CNN
+1. a layer with nl distinct filters has nl feature maps each of size ml，where Ml is the height times the width of the feature map.
+
+2. so the responses in a layer l can be stored in a matrix fl∈rnl×ml where flij is the activation of the ith filter at position j in layer l
+
+3. so let~p and ~x be the original image and the image that is generated and pl and fl their respective feature representation in layer l.  we then define the squared-error loss between the two feature representations
+$$
+\mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } , l ) = \frac { 1 } { 2 } \sum _ { i , j } \left( F _ { i j } ^ { l } - P _ { i j } ^ { l } \right) ^ { 2 }
+$$
+4. these feature correlations are given by the gram matrix $G ^ { l } \in \mathcal { R } ^ { N _ { l } \times N _ { l } }$  where  $G _ { i j } ^ { l }$ is the inner product between the feature map i and j in layer l  :
+
+   $G _ { i j } ^ { l } = \sum _ { k } F _ { i k } ^ { l } F _ { j k } ^ { l }$
+
+5. so let $\vec { a }$ and $\vec { x }$ be the original image and the image that is generated and $A ^ { l }$  and   $G$ their respective style representations in layer l.  the contribution of that layer to the total loss is then  
+
+   $E _ { l } = \frac { 1 } { 4 N _ { l } ^ { 2 } M _ { l } ^ { 2 } } \sum _ { i , j } \left( G _ { i j } ^ { l } - A _ { i j } ^ { l } \right) ^ { 2 }​$  
+
+   and the total loss is
+
+    $\mathcal { L } _ { s t y l e } ( \vec { a } , \vec { x } ) = \sum _ { l = 0 } ^ { L } w _ { l } E _ { l }​$ 
+
+6. so let $\vec { p }$  be the photograph and $\vec { a }$ be the artwork. the loss function we minimise is 
+
+   $\mathcal { L } _ { \text {total} } ( \vec { p } , \vec { a } , \vec { x } ) = \alpha \mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } ) + \beta \mathcal { L } _ { \text {style} } ( \vec { a } , \vec { x } )​$
+
+   whereαandβare the weighting factors for content and style reconstruction respectively
+
+
 
 --
-![fcn](/midinet/midinet1.png)
+![1](/Artisticstyle/1.png)
 <!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   -->
 
 --
-![fcn](/midinet/midinet2.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   -->
-
---
-## Datasets
-![fcn](/midinet/data.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   -->
 
 --
 
-
-
-![fcn](/midinet/1d.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   -->
-
---
-
-we  crawled  a  collection  of  1,022 midi tabs of pop music from theorytab which providesexactly two channels per tab, one for melody and the otherfor the underlying chord progression.with this dataset, wecan implement at least two versions of midinets: one thatlearns from only the melody channel for fair comparison with  melodyrnn,  which  does  not  use  chords,  andthe other that additionally uses chords to condition melody generation, to test the capacity of midinet.
-
---
 
 ## Results
 
-result of a user study comparing melodyrnnand  midinet  models,  for  people  (top  row)  with  musicalbackgrounds and (bottom) without musical backgrounds.the middle bars indicate the mean values. please note thatmidinet model 2 takes the chord condition as additional information.
+fig 2 shows results for different relative weightings of the content and style reconstruction loss (along the columns) and for matching the style representations only on layer ‘conv11’ (a), ‘conv11’ and ‘conv21’ (b), ‘conv11’, ‘conv21’ and ‘conv31’ (c),‘conv11’, ‘conv21’, ‘conv31’ and ‘conv41’ (d), ‘conv11’, ‘conv21’, ‘conv31’, ‘conv41’and ‘conv51’ (e). 
 
 
 
 --
 
-![xiaoguo](/midinet/result.png)
+![2](/Artisticstyle/2.png)
 <!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></script>
                 </section>
             </div>
