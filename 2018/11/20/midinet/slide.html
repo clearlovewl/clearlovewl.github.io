@@ -66,7 +66,65 @@
                          data-separator-notes="^Note:">
                     <script type="text/template">A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION
 
-undefined</script>
+
+> [ppt]( https://clearlovewl.github.io/2018/11/20/midinet/slide.html)
+
+![fcn](/midinet/midinet.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="500px"   -->
+
+---
+## ABSTRCT
+1. most exisiting neural network models for music generation use recurrent neural networks
+2. using CNNs and GAN for generating melody
+
+
+
+![fcn](/midinet/midinet.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="500px"   -->
+
+--
+
+## Methods
+1. Symbolic Representation for Convolution: h -by- w real-valued matrix X
+2. Generator CNN and Discriminator CNN
+3. Conditioner CNN
+
+--
+![fcn](/midinet/midinet1.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   -->
+
+--
+![fcn](/midinet/midinet2.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   -->
+
+--
+## Datasets
+![fcn](/midinet/data.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   -->
+
+--
+
+
+
+![fcn](/midinet/1d.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   -->
+
+--
+
+we  crawled  a  collection  of  1,022 midi tabs of pop music from theorytab which providesexactly two channels per tab, one for melody and the otherfor the underlying chord progression.with this dataset, wecan implement at least two versions of midinets: one thatlearns from only the melody channel for fair comparison with  melodyrnn,  which  does  not  use  chords,  andthe other that additionally uses chords to condition melody generation, to test the capacity of midinet.
+
+--
+
+## Results
+
+result of a user study comparing melodyrnnand  midinet  models,  for  people  (top  row)  with  musicalbackgrounds and (bottom) without musical backgrounds.the middle bars indicate the mean values. please note thatmidinet model 2 takes the chord condition as additional information.
+
+
+
+--
+
+![xiaoguo](/midinet/result.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></script>
                 </section>
             </div>
         </div>
@@ -123,11 +181,11 @@ Reveal.initialize({
   // 是否在一个弹出的 iframe 中打开幻灯片中的链接
   previewLinks: false,
   // 切换过渡效果
-  transition: 'default', // none/fade/slide/convex/concave/zoom
+  transition: 'slide', // none/fade/slide/convex/concave/zoom
   // 过渡速度
   transitionSpeed: 'default', // default/fast/slow
   // 全屏幻灯片背景的过渡效果
-  backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+  backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
   // 加载除当前可见的幻灯片之外的幻灯片数量
   viewDistance: 3,
   // 视差背景图片
@@ -140,9 +198,25 @@ Reveal.initialize({
   // - 设置为 0 时，禁止沿轴运动
   parallaxBackgroundHorizontal: null,
   parallaxBackgroundVertical: null,
+  width: 1280,
+	height: 900,
+
+	// Factor of the display size that should remain empty around the content
+	margin: 0.2,
+
+	// Bounds for smallest/largest possible scale to apply to content
+	minScale: 0.1,
+	maxScale: 1.1,
   // More info https://github.com/hakimel/reveal.js#dependencies
+  math: {
+		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+		config: 'TeX-AMS-MML_HTMLorMML'  // See http://docs.mathjax.org/en/latest/config-files.html
+
+	},
+	//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
   dependencies: [
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/marked.js' },
+    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/math/math.js', async: true },
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/markdown.min.js' },
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/notes/notes.min.js', async: true },
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }

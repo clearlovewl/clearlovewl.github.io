@@ -66,7 +66,54 @@
                          data-separator-notes="^Note:">
                     <script type="text/template">Fully Convolutional Networks for Semantic Segmentation
 
-undefined</script>
+> [原文](https://arxiv.org/abs/1411.4038)
+> [代码](https://github.com/clearlovewl/FCN-pytorch-easiest)
+> [ppt]( https://clearlovewl.github.io/2018/10/22/fcn/slide.html)
+
+![fcn](/fcn/fcn.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   -->
+
+---
+## ABSTRCT
+Convolutional networks are powerful visual models that yield  hierarchies  of  features.FCN show  that  convolutional networks by themselves, trained end-to-end, pixels-to-pixels,  exceed  the  state-of-the-art  in  semantic  segmentation.
+![fcn](/fcn/fcn.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   -->
+
+--
+## Adapting classifiers for dense prediction
+typical recognition nets,  ostensibly  take fixed-sized inputs and produce nonspatial outputs. the fully connected layers of these nets have fixed dimensions and throw away spatial coordinates.  however, these fully connected layers can also be viewed as convolutions with kernels  that  cover  their  entire  input  regions.   doing  so  casts them  into  fully  convolutional  networks  that  take  input  of any size and output classification maps.
+
+--
+![fcn](/fcn/fcnx.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   -->
+
+--
+## Segmentation Architecture
+![fcn2](/fcn/fcn2.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   -->
+
+--
+we address this by adding links that combine the final prediction layer with lower layers with finer strides.  this turns a line topology into a dag, with edges that skip ahead from lower layers to higher ones .   as they see fewer pixels, the finer scale predictions should need fewerlayers, so it makes sense to make them from shallower netoutputs.   combining fine layers and coarse layers lets the model make local predictions that respect global structure.
+
+--
+![vgg](/fcn/vgg.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   -->
+
+--
+![fcn2](/fcn/fcn8.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   -->
+
+--
+## Transpose Convolution
+![tconv](/fcn/tconv.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   -->
+
+---
+## Results
+table  gives the performance of ourfcn-8s on the test sets of pascal voc 2011 and 2012,and compares it to the previous state-of-the-art, sds [16],and the well-known r-cnn [12].  we achieve the best results on mean iu by a relative margin of 20%.  inference time is reduced114×(convnet only, ignoring proposals and refinement) or 286×(overall)
+
+![xiaoguo](/fcn/xiaoguo.png)
+<!-- .element style="border: 0; background: None; box-shadow: None" height="200px"   --></script>
                 </section>
             </div>
         </div>
@@ -123,11 +170,11 @@ Reveal.initialize({
   // 是否在一个弹出的 iframe 中打开幻灯片中的链接
   previewLinks: false,
   // 切换过渡效果
-  transition: 'default', // none/fade/slide/convex/concave/zoom
+  transition: 'slide', // none/fade/slide/convex/concave/zoom
   // 过渡速度
   transitionSpeed: 'default', // default/fast/slow
   // 全屏幻灯片背景的过渡效果
-  backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+  backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
   // 加载除当前可见的幻灯片之外的幻灯片数量
   viewDistance: 3,
   // 视差背景图片
@@ -140,9 +187,25 @@ Reveal.initialize({
   // - 设置为 0 时，禁止沿轴运动
   parallaxBackgroundHorizontal: null,
   parallaxBackgroundVertical: null,
+  width: 1280,
+	height: 900,
+
+	// Factor of the display size that should remain empty around the content
+	margin: 0.2,
+
+	// Bounds for smallest/largest possible scale to apply to content
+	minScale: 0.1,
+	maxScale: 1.1,
   // More info https://github.com/hakimel/reveal.js#dependencies
+  math: {
+		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+		config: 'TeX-AMS-MML_HTMLorMML'  // See http://docs.mathjax.org/en/latest/config-files.html
+
+	},
+	//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
   dependencies: [
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/marked.js' },
+    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/math/math.js', async: true },
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/markdown.min.js' },
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/notes/notes.min.js', async: true },
     { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }

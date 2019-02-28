@@ -329,15 +329,15 @@
 <p><img src="/fcn/fcn.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
 <hr>
 <h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><p>Convolutional networks are powerful visual models that yield  hierarchies  of  features.FCN show  that  convolutional networks by themselves, trained end-to-end, pixels-to-pixels,  exceed  the  state-of-the-art  in  semantic  segmentation.<br><img src="/fcn/fcn.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
-<p>–</p>
+<p>—</p>
 <h2 id="Adapting-classifiers-for-dense-prediction"><a href="#Adapting-classifiers-for-dense-prediction" class="headerlink" title="Adapting classifiers for dense prediction"></a>Adapting classifiers for dense prediction</h2><p>typical recognition nets,  ostensibly  take fixed-sized inputs and produce nonspatial outputs. the fully connected layers of these nets have fixed dimensions and throw away spatial coordinates.  however, these fully connected layers can also be viewed as convolutions with kernels  that  cover  their  entire  input  regions.   doing  so  casts them  into  fully  convolutional  networks  that  take  input  of any size and output classification maps.</p>
-<p>–<br><img src="/fcn/fcnx.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<p>–</p>
+<p>—<br><img src="/fcn/fcnx.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<p>—</p>
 <h2 id="Segmentation-Architecture"><a href="#Segmentation-Architecture" class="headerlink" title="Segmentation Architecture"></a>Segmentation Architecture</h2><p><img src="/fcn/fcn2.png" alt="fcn2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
-<p>–<br>we address this by adding links that combine the final prediction layer with lower layers with finer strides.  this turns a line topology into a dag, with edges that skip ahead from lower layers to higher ones .   as they see fewer pixels, the finer scale predictions should need fewerlayers, so it makes sense to make them from shallower netoutputs.   combining fine layers and coarse layers lets the model make local predictions that respect global structure.</p>
-<p>–<br><img src="/fcn/vgg.png" alt="vgg"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<p>–<br><img src="/fcn/fcn8.png" alt="fcn2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<p>–</p>
+<p>—<br>we address this by adding links that combine the final prediction layer with lower layers with finer strides.  this turns a line topology into a dag, with edges that skip ahead from lower layers to higher ones .   as they see fewer pixels, the finer scale predictions should need fewerlayers, so it makes sense to make them from shallower netoutputs.   combining fine layers and coarse layers lets the model make local predictions that respect global structure.</p>
+<p>—<br><img src="/fcn/vgg.png" alt="vgg"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<p>—<br><img src="/fcn/fcn8.png" alt="fcn2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<p>—</p>
 <h2 id="Transpose-Convolution"><a href="#Transpose-Convolution" class="headerlink" title="Transpose Convolution"></a>Transpose Convolution</h2><p><img src="/fcn/tconv.png" alt="tconv"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
 <hr>
 <h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>table  gives the performance of ourfcn-8s on the test sets of pascal voc 2011 and 2012,and compares it to the previous state-of-the-art, sds [16],and the well-known r-cnn [12].  we achieve the best results on mean iu by a relative margin of 20%.  inference time is reduced114×(convnet only, ignoring proposals and refinement) or 286×(overall)</p>

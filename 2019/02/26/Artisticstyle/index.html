@@ -91,7 +91,7 @@
 <meta property="og:image" content="http://yoursite.com/Artisticstyle/1.png">
 <meta property="og:image" content="http://yoursite.com/Artisticstyle/1.png">
 <meta property="og:image" content="http://yoursite.com/Artisticstyle/2.png">
-<meta property="og:updated_time" content="2019-02-27T12:15:04.445Z">
+<meta property="og:updated_time" content="2019-02-28T05:49:10.182Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="A Neural Algorithm of Artistic Style">
 <meta name="twitter:description" content="A Neural Algorithm of Artistic Style">
@@ -320,47 +320,57 @@
 
       
         <blockquote>
-<p><a href="https://clearlovewl.github.io/2019/02/26/Artisticstyle/slide.html" target="_blank" rel="noopener">ppt</a></p>
+<p><a href="https://clearlovewl.github.io/2019/02/26/Artisticstyle/slide.html" target="_blank" rel="noopener">ppt</a><br><a href="http://localhost:4000/2019/02/26/Artisticstyle/slide.html" target="_blank" rel="noopener">ppt</a></p>
 </blockquote>
-<p><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="500px"   --></p>
-<p>–</p>
+<p><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
 <hr>
 <h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><ol>
-<li>在美术方面，  <code>$$ J(\theta_0,\theta_1) = \sum_{i=0} $$</code>  特别是绘画中，人类已经掌握了创造的经验的技巧，在形象的内容和风格之间形成了复杂的体验。到目前为止，这一过程的基础是相似的，并且没有类似能力的人工系统。thus far the algorithmic basis of this process is unknown and there exists no artificial system with similar capabilities.然而，在视觉感知的其他关键领域，如检测和人脸识别，深度网络有接近人类的表现。</li>
+<li>在美术方面，特别是绘画中，人类已经掌握了创造的经验的技巧，在形象的内容和风格之间形成了复杂的体验。到目前为止，这一过程的基础是相似的，并且没有类似能力的人工系统。thus far the algorithmic basis of this process is unknown and there exists no artificial system with similar capabilities.然而，在视觉感知的其他关键领域，如检测和人脸识别，深度网络有接近人类的表现。</li>
 <li>here we introduce an artificial system based on a deep neural network that creates artistic images providing a neural algorithm for the creation of artistic images</li>
 <li>our work offers a path forward to an algorithmic under-standing of how humans create and perceive artistic imagery</li>
 </ol>
-<p>–<br><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
-<p>–</p>
+<p>—<br><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<p>—</p>
 <h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ol>
-<li><p>a layer with $N _ { l }$ distinct filters has $N _ { l }$ feature maps each of size $M _ { l }$，where $M _ { l }$ is the height times the width of the feature map.</p>
+<li><p>a layer with <script type="math/tex">N _ { l }</script> distinct filters has <script type="math/tex">N _ { l }</script> feature maps each of size <script type="math/tex">M _ { l }</script>，where <script type="math/tex">M _ { l }</script> is the height times the width of the feature map.</p>
 </li>
-<li><p>so the responses in a layer l can be stored in a matrix $F ^ { l } \in \mathcal { R } ^ { N _ { l } \times M _ { l } }​$  where $F _ { i j } ^ { l }​$ is the activation of the ith filter at position j in layer l</p>
+<li><p>so the responses in a layer l can be stored in a matrix <script type="math/tex">F ^ { l } \in \mathcal { R } ^ { N _ { l } \times M _ { l } }​</script>  where <script type="math/tex">F _ { i j } ^ { l }​</script> is the activation of the ith filter at position j in layer l</p>
 </li>
-<li><p>so let $\vec { p }​$ and $\vec {x}​$ be the original image and the image that is generated and $P ^ { l }​$ and $F ^ { l }​$ their respective feature representation in layer l.  we then define the squared-error loss between the two feature representations<br>$$<br>\mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } , l ) = \frac { 1 } { 2 } \sum _ { i , j } \left( F _ { i j } ^ { l } - P _ { i j } ^ { l } \right) ^ { 2 }<br>$$</p>
-</li>
-</ol>
-<p>-</p>
-<ol start="4">
-<li><p>these feature correlations are given by the gram matrix $G ^ { l } \in \mathcal { R } ^ { N _ { l } \times N _ { l } }​$  where  $G _ { i j } ^ { l }​$ is the inner product between the feature map i and j in layer l  :<br>$$<br>G _ { i j } ^ { l } = \sum _ { k } F _ { i k } ^ { l } F _ { j k } ^ { l }<br>$$</p>
-</li>
-<li><p>so let $\vec { a }$ and $\vec { x }$ be the original image and the image that is generated and $A ^ { l }$  and   $G ^ { l }$  their respective style representations in layer l.  the contribution of that layer to the total loss is then  </p>
+<li><p>so let <script type="math/tex">\vec { p }</script> and <script type="math/tex">\vec {x}</script> be the original image and the image that is generated and <script type="math/tex">P ^ { l }</script> and <script type="math/tex">F ^ { l }</script> their respective feature representation in layer l.  we then define the squared-error loss between the two feature representations<br><code>$$
+\mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } , l ) = \frac { 1 } { 2 } \sum _ { i , j } \left( F _ { i j } ^ { l } - P _ { i j } ^ { l } \right) ^ { 2 }
+$$</code></p>
 </li>
 </ol>
-<p>$$<br>   E _ { l } = \frac { 1 } { 4 N _ { l } ^ { 2 } M _ { l } ^ { 2 } } \sum _ { i , j } \left( G _ { i j } ^ { l } - A _ { i j } ^ { l } \right) ^ { 2 }<br>$$</p>
-<p>   and the total loss is</p>
-<p>$$<br>    \mathcal { L } _ { s t y l e } ( \vec { a } , \vec { x } ) = \sum _ { l = 0 } ^ { L } w _ { l } E _ { l }<br>$$</p>
-<p>-</p>
-<ol start="6">
-<li>so let $\vec { p }$  be the photograph and $\vec { a }$ be the artwork. the loss function we minimise is </li>
-</ol>
-<p>$$<br>\mathcal { L } _ { \text {total} } ( \vec { p } , \vec { a } , \vec { x } ) = \alpha \mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } ) + \beta \mathcal { L } _ { \text {style} } ( \vec { a } , \vec { x } )<br>$$</p>
+<p>—</p>
+<p>4  these feature correlations are given by the gram matrix <script type="math/tex">G ^ { l } \in \mathcal { R } ^ { N _ { l } \times N _ { l } }​</script>  where  <script type="math/tex">G _ { i j } ^ { l }​</script> is the inner product between the feature map i and j in layer l  :<br>`$$<br>G _ { i j } ^ { l } = \sum _ { k } F _ { i k } ^ { l } F _ { j k } ^ { l }</p>
+<script type="math/tex; mode=display">`
+
+5  so let $$\vec { a }$$ and $$\vec { x }$$ be the original image and the image that is generated and $$A ^ { l }$$  and   $$G ^ { l }$$  their respective style representations in layer l.  the contribution of that layer to the total loss is then  
+
+
+
+`</script><p>   E _ { l } = \frac { 1 } { 4 N _ { l } ^ { 2 } M _ { l } ^ { 2 } } \sum _ { i , j } \left( G _ { i j } ^ { l } - A _ { i j } ^ { l } \right) ^ { 2 }</p>
+<script type="math/tex; mode=display">`
+
+
+
+   and the total loss is
+
+`</script><pre><code>\mathcal { L } _ { s t y l e } ( \vec { a } , \vec { x } ) = \sum _ { l = 0 } ^ { L } w _ { l } E _ { l }
+</code></pre><script type="math/tex; mode=display">`
+
+--
+
+6  so let $\vec { p }$  be the photograph and $\vec { a }$ be the artwork. the loss function we minimise is 
+
+`</script><p>\mathcal { L } _ { \text {total} } ( \vec { p } , \vec { a } , \vec { x } ) = \alpha \mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } ) + \beta \mathcal { L } _ { \text {style} } ( \vec { a } , \vec { x } )</p>
+<p>$$`</p>
 <p>   where α and β are the weighting factors for content and style reconstruction respectively</p>
-<p>–<br><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
-<p>–</p>
+<p>—<br><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<p>—</p>
 <h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>fig 2 shows results for different relative weightings of the content and style reconstruction loss (along the columns) and for matching the style representations only on layer ‘conv11’ (a), ‘conv11’ and ‘conv21’ (b), ‘conv11’, ‘conv21’ and ‘conv31’ (c),‘conv11’, ‘conv21’, ‘conv31’ and ‘conv41’ (d), ‘conv11’, ‘conv21’, ‘conv31’, ‘conv41’and ‘conv51’ (e). </p>
-<p>–</p>
-<p><img src="/Artisticstyle/2.png" alt="2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
+<p>—</p>
+<p><img src="/Artisticstyle/2.png" alt="2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="900px"   --></p>
 
       
     </div>
