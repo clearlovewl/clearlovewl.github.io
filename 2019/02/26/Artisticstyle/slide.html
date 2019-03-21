@@ -100,45 +100,45 @@
 
 
 ## Methods
-1. a layer with `$N _ { l }$` distinct filters has `$N _ { l }$` feature maps each of size `$M _ { l }$`，where `$M _ { l }$` is the height times the width of the feature map.
+1. a layer with $N _ { l }$ distinct filters has $N _ { l }$ feature maps each of size $M _ { l }$，where $M _ { l }$ is the height times the width of the feature map.
 
-2. so the responses in a layer l can be stored in a matrix `$F ^ { l } \in \mathcal { R } ^ { N _ { l } \times M _ { l } }​$`  where `$F _ { i j } ^ { l }​$` is the activation of the ith filter at position j in layer l
+2. so the responses in a layer l can be stored in a matrix $F ^ { l } \in \mathcal { R } ^ { N _ { l } \times M _ { l } }​$  where $F _ { i j } ^ { l }​$    is the activation of the ith filter at position j in layer l
 
-3. so let `$\vec { p }$` and `$\vec {x}$` be the original image and the image that is generated and `$P ^ { l }$` and `$F ^ { l }$` their respective feature representation in layer l.  we then define the squared-error loss between the two feature representations
-`$$
+3. so let    $\vec { p }$    and    $\vec {x}$    be the original image and the image that is generated and    $P ^ { l }$    and    $F ^ { l }$    their respective feature representation in layer l.  we then define the squared-error loss between the two feature representations
+   $$
 \mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } , l ) = \frac { 1 } { 2 } \sum _ { i , j } \left( F _ { i j } ^ { l } - P _ { i j } ^ { l } \right) ^ { 2 }
-$$`
+$$   
 
 --
 
-4  these feature correlations are given by the gram matrix `$G ^ { l } \in \mathcal { R } ^ { N _ { l } \times N _ { l } }​$`  where  `$G _ { i j } ^ { l }​$` is the inner product between the feature map i and j in layer l  :
-`$$
+4  these feature correlations are given by the gram matrix    $G ^ { l } \in \mathcal { R } ^ { N _ { l } \times N _ { l } }​$     where     $G _ { i j } ^ { l }​$    is the inner product between the feature map i and j in layer l  :
+   $$
 G _ { i j } ^ { l } = \sum _ { k } F _ { i k } ^ { l } F _ { j k } ^ { l }
-$$`
+$$   
 
-5  so let `$\vec { a }$` and `$\vec { x }$` be the original image and the image that is generated and `$A ^ { l }$`  and   `$G ^ { l }$`  their respective style representations in layer l.  the contribution of that layer to the total loss is then  
+5  so let    $\vec { a }$    and    $\vec { x }$    be the original image and the image that is generated and    $A ^ { l }$     and      $G ^ { l }$     their respective style representations in layer l.  the contribution of that layer to the total loss is then  
 
    
 
-`$$
+   $$
    E _ { l } = \frac { 1 } { 4 N _ { l } ^ { 2 } M _ { l } ^ { 2 } } \sum _ { i , j } \left( G _ { i j } ^ { l } - A _ { i j } ^ { l } \right) ^ { 2 }
-$$`
+$$   
 
    
 
    and the total loss is
 
-`$$
+   $$
     \mathcal { L } _ { s t y l e } ( \vec { a } , \vec { x } ) = \sum _ { l = 0 } ^ { L } w _ { l } E _ { l }
-$$`
+$$   
 
 --
 
 6  so let $\vec { p }$  be the photograph and $\vec { a }$ be the artwork. the loss function we minimise is 
 
-`$$
+   $$
 \mathcal { L } _ { \text {total} } ( \vec { p } , \vec { a } , \vec { x } ) = \alpha \mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } ) + \beta \mathcal { L } _ { \text {style} } ( \vec { a } , \vec { x } )
-$$`
+$$   
 
    where α and β are the weighting factors for content and style reconstruction respectively
 
