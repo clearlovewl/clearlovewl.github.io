@@ -93,7 +93,7 @@
 <meta property="og:image" content="http://yoursite.com/seeindark/2.png">
 <meta property="og:image" content="http://yoursite.com/seeindark/5.png">
 <meta property="og:image" content="http://yoursite.com/seeindark/4.png">
-<meta property="og:updated_time" content="2019-03-27T13:54:54.588Z">
+<meta property="og:updated_time" content="2019-03-27T14:11:47.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning to See in the Dark">
 <meta name="twitter:description" content="Learning to See in the Dark">
@@ -321,19 +321,26 @@
       
 
       
-        <p><img src="/seeindark/2.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><p>Imaging in low light is challenging due to low photon count and low SNR . Short-exposure images suffer from noise, while long exposure can induce blur and is often impractical.  A variety of denoising , deblurring , and enhancement techniques have been proposed, but their effectiveness is limited in extreme conditions, such as video-rate imaging at night. To support the development of learning-based pipelines for low-light image processing, we introduce a dataset of raw short-exposure low-light images, with corresponding long-exposure reference images. Using the presented dataset, we develop a pipeline for processing low light images, based on end-to-end training of a fully convolutional network. The network operates directly on raw sensor data and replaces much of the traditional image processing pipeline, which tends to perform poorly on such data. We report promising results on the new dataset , analyze factors that affect performance, and highlight opportunities for future work</p>
-<h2 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h2><p>We collected a new dataset for training and benchmarking single image processing of raw low light images.  The See-in-the-Dark  (SID)  dataset  contains  5094  raw  short exposure images, each with a corresponding long exposure reference image. </p>
-<p>The  dataset  contains  both  indoor  and  outdoor  images</p>
+        <p>—</p>
+<p><img src="/seeindark/2.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<p>—</p>
+<h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><p>Imaging in low light is challenging due to low photon count and low SNR . Short-exposure images suffer from noise, while long exposure can induce blur and is often impractical.  A variety of denoising , deblurring , and enhancement techniques have been proposed, but their effectiveness is limited in extreme conditions, such as video-rate imaging at night. To support the development of learning-based pipelines for low-light image processing, we introduce a dataset of raw short-exposure low-light images, with corresponding long-exposure reference images. Using the presented dataset, we develop a pipeline for processing low light images, based on end-to-end training of a fully convolutional network. The network operates directly on raw sensor data and replaces much of the traditional image processing pipeline, which tends to perform poorly on such data. </p>
+<p>—</p>
+<h2 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h2><ol>
+<li>We collected a new dataset for training and benchmarking single image processing of raw low light images.  The See-in-the-Dark  (SID)  dataset  contains  5094  raw  short exposure images, each with a corresponding long exposure reference image. </li>
+<li>The  dataset  contains  both  indoor  and  outdoor  images</li>
+</ol>
 <p>—</p>
 <p><img src="/seeindark/1.jpg" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
 <p>—</p>
 <p><img src="/seeindark/3.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
 <p>—</p>
-<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><p>For Bayer arrays, we pack the input into four channels and correspondingly reduce the spatial resolution by a factor of two in each dimension. </p>
-<p>We subtract the black level and scale the data by the desired ampliﬁcation ratio (e.g., x100 or x300). </p>
-<p>We train the networks from scratch using the L1 lossand the Adam optimizer </p>
-<p>Super-Resolution from ‘Real-Time Single Image and Video Super-Resolution Using an Efficient<br>Sub-Pixel Convolutional Neural Network’</p>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ol>
+<li>For Bayer arrays, we pack the input into four channels and correspondingly reduce the spatial resolution by a factor of two in each dimension. </li>
+<li>We subtract the black level and scale the data by the desired ampliﬁcation ratio (e.g., x100 or x300). </li>
+<li>We train the networks from scratch using the L1 lossand the Adam optimizer </li>
+<li>Super-Resolution from ‘Real-Time Single Image and Video Super-Resolution Using an Efficient<br>Sub-Pixel Convolutional Neural Network’</li>
+</ol>
 <p>—<br><img src="/seeindark/2.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
 <p>—</p>
 <p>—<br><img src="/seeindark/5.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>

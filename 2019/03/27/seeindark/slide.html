@@ -69,6 +69,8 @@
 
 
 
+--
+
 
 
 ![1](/seeindark/2.png)
@@ -76,22 +78,25 @@
 
 
 
-
+--
 
 
 
 
 ## ABSTRCT
 
-Imaging in low light is challenging due to low photon count and low SNR . Short-exposure images suffer from noise, while long exposure can induce blur and is often impractical.  A variety of denoising , deblurring , and enhancement techniques have been proposed, but their effectiveness is limited in extreme conditions, such as video-rate imaging at night. To support the development of learning-based pipelines for low-light image processing, we introduce a dataset of raw short-exposure low-light images, with corresponding long-exposure reference images. Using the presented dataset, we develop a pipeline for processing low light images, based on end-to-end training of a fully convolutional network. The network operates directly on raw sensor data and replaces much of the traditional image processing pipeline, which tends to perform poorly on such data. We report promising results on the new dataset , analyze factors that affect performance, and highlight opportunities for future work
+Imaging in low light is challenging due to low photon count and low SNR . Short-exposure images suffer from noise, while long exposure can induce blur and is often impractical.  A variety of denoising , deblurring , and enhancement techniques have been proposed, but their effectiveness is limited in extreme conditions, such as video-rate imaging at night. To support the development of learning-based pipelines for low-light image processing, we introduce a dataset of raw short-exposure low-light images, with corresponding long-exposure reference images. Using the presented dataset, we develop a pipeline for processing low light images, based on end-to-end training of a fully convolutional network. The network operates directly on raw sensor data and replaces much of the traditional image processing pipeline, which tends to perform poorly on such data. 
+
+--
 
 
 
 ## dataset
 
-We collected a new dataset for training and benchmarking single image processing of raw low light images.  The See-in-the-Dark  (SID)  dataset  contains  5094  raw  short exposure images, each with a corresponding long exposure reference image. 
+1. We collected a new dataset for training and benchmarking single image processing of raw low light images.  The See-in-the-Dark  (SID)  dataset  contains  5094  raw  short exposure images, each with a corresponding long exposure reference image. 
+2. The  dataset  contains  both  indoor  and  outdoor  images
 
-The  dataset  contains  both  indoor  and  outdoor  images
+
 
 --
 
@@ -107,14 +112,17 @@ The  dataset  contains  both  indoor  and  outdoor  images
 
 ## Methods
 
-For Bayer arrays, we pack the input into four channels and correspondingly reduce the spatial resolution by a factor of two in each dimension. 
+1. For Bayer arrays, we pack the input into four channels and correspondingly reduce the spatial resolution by a factor of two in each dimension. 
+2. We subtract the black level and scale the data by the desired ampliﬁcation ratio (e.g., x100 or x300). 
+3. We train the networks from scratch using the L1 lossand the Adam optimizer 
+4. Super-Resolution from 'Real-Time Single Image and Video Super-Resolution Using an Efficient
+   Sub-Pixel Convolutional Neural Network'
 
-We subtract the black level and scale the data by the desired ampliﬁcation ratio (e.g., x100 or x300). 
 
-We train the networks from scratch using the L1 lossand the Adam optimizer 
 
-Super-Resolution from 'Real-Time Single Image and Video Super-Resolution Using an Efficient
-Sub-Pixel Convolutional Neural Network'
+
+
+
 
 --
 ![1](/seeindark/2.png)
@@ -223,11 +231,11 @@ Reveal.initialize({
 	height: 900,
 
 	// Factor of the display size that should remain empty around the content
-	margin: 0.2,
+	margin: 0.05,
 
 	// Bounds for smallest/largest possible scale to apply to content
-	minScale: 0.1,
-	maxScale: 1.1,
+	minScale: 0.6,
+	maxScale: 1.,
   // More info https://github.com/hakimel/reveal.js#dependencies
   math: {
 		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
