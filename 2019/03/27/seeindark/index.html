@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="pytorch,分割,">
+  <meta name="keywords" content="pytorch,image increasing,">
 
 
 
@@ -79,27 +79,25 @@
 
 
 
-<meta name="description" content="分割FCN">
-<meta name="keywords" content="pytorch,分割">
+<meta name="description" content="Learning to See in the Dark">
+<meta name="keywords" content="pytorch,image increasing">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fully Convolutional Networks for Semantic Segmentation">
-<meta property="og:url" content="http://yoursite.com/2018/10/22/fcn/index.html">
+<meta property="og:title" content="Learning to See in the Dark">
+<meta property="og:url" content="http://yoursite.com/2019/03/27/seeindark/index.html">
 <meta property="og:site_name" content="wl-uestc">
-<meta property="og:description" content="分割FCN">
+<meta property="og:description" content="Learning to See in the Dark">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/fcn/fcn.png">
-<meta property="og:image" content="http://yoursite.com/fcn/fcn.png">
-<meta property="og:image" content="http://yoursite.com/fcn/fcnx.png">
-<meta property="og:image" content="http://yoursite.com/fcn/fcn2.png">
-<meta property="og:image" content="http://yoursite.com/fcn/vgg.png">
-<meta property="og:image" content="http://yoursite.com/fcn/fcn8.png">
-<meta property="og:image" content="http://yoursite.com/fcn/tconv.png">
-<meta property="og:image" content="http://yoursite.com/fcn/xiaoguo.png">
-<meta property="og:updated_time" content="2018-10-24T12:51:37.543Z">
+<meta property="og:image" content="d:/home/clearlovewl.github.io/source/_posts/seeindark/2.png">
+<meta property="og:image" content="d:/home/clearlovewl.github.io/source/_posts/seeindark/1.jpg">
+<meta property="og:image" content="d:/home/clearlovewl.github.io/source/_posts/seeindark/3.png">
+<meta property="og:image" content="d:/home/clearlovewl.github.io/source/_posts/seeindark/2.png">
+<meta property="og:image" content="d:/home/clearlovewl.github.io/source/_posts/seeindark/5.png">
+<meta property="og:image" content="d:/home/clearlovewl.github.io/source/_posts/seeindark/4.png">
+<meta property="og:updated_time" content="2019-03-27T13:50:08.746Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fully Convolutional Networks for Semantic Segmentation">
-<meta name="twitter:description" content="分割FCN">
-<meta name="twitter:image" content="http://yoursite.com/fcn/fcn.png">
+<meta name="twitter:title" content="Learning to See in the Dark">
+<meta name="twitter:description" content="Learning to See in the Dark">
+<meta name="twitter:image" content="d:/home/clearlovewl.github.io/source/_posts/seeindark/2.png">
 
 
 
@@ -129,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/22/fcn/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/27/seeindark/">
 
 
 
 
 
-  <title>Fully Convolutional Networks for Semantic Segmentation | wl-uestc</title>
+  <title>Learning to See in the Dark | wl-uestc</title>
   
 
 
@@ -252,7 +250,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/22/fcn/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/27/seeindark/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wang lei">
@@ -269,7 +267,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Fully Convolutional Networks for Semantic Segmentation</h1>
+          <h1 class="post-title" itemprop="name headline">Learning to See in the Dark</h1>
         
 
         <div class="post-meta">
@@ -281,8 +279,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-22T00:00:00+08:00">
-                2018-10-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-03-27T00:00:00+08:00">
+                2019-03-27
               </time>
             
 
@@ -306,7 +304,7 @@
 
           
               <div class="post-description">
-                  分割FCN
+                  Learning to See in the Dark
               </div>
           
 
@@ -323,25 +321,33 @@
       
 
       
-        <blockquote>
-<p><a href="https://arxiv.org/abs/1411.4038" target="_blank" rel="noopener">原文</a><br><a href="https://github.com/clearlovewl/FCN-pytorch-easiest" target="_blank" rel="noopener">代码</a><br><a href="https://clearlovewl.github.io/2018/10/22/fcn/slide.html" target="_blank" rel="noopener">ppt</a></p>
+        <p><img src="D:/home/clearlovewl.github.io/source/_posts/seeindark/2.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<hr>
+<h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><ol>
+<li>Imaging in low light is challenging due to low photon count and low SNR . Short-exposure images suffer from noise, while long exposure can induce blur and is often impractical.  A variety of denoising , deblurring , and enhancement techniques have been proposed, but their effectiveness is limited in extreme conditions, such as video-rate imaging at night. To support the development of learning-based pipelines for low-light image processing, we introduce a dataset of raw short-exposure low-light images, with corresponding long-exposure reference images. Using the presented dataset, we develop a pipeline for processing low light images, based on end-to-end training of a fully convolutional network. The network operates directly on raw sensor data and replaces much of the traditional image processing pipeline, which tends to perform poorly on such data. We report promising results on the new dataset , analyze factors that affect performance, and highlight opportunities for future work</li>
+</ol>
+<h2 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h2><p>We collected a new dataset for training and benchmarking single image processing of raw low light images.  The See-in-the-Dark  (SID)  dataset  contains  5094  raw  short exposure images, each with a corresponding long exposure reference image. </p>
+<p>The  dataset  contains  both  indoor  and  outdoor  images</p>
+<p>—</p>
+<p><img src="D:/home/clearlovewl.github.io/source/_posts/seeindark/1.jpg" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<p>—</p>
+<p><img src="D:/home/clearlovewl.github.io/source/_posts/seeindark/3.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<p>—</p>
+<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><p>For Bayer arrays, we pack the input into four channels and correspondingly reduce the spatial resolution by a factor of two in each dimension. </p>
+<p>We subtract the black level and scale the data by the desired ampliﬁcation ratio (e.g., x100 or x300). </p>
+<p>We train the networks from scratch using the L1 lossand the Adam optimizer </p>
+<p>Super-Resolution from ‘Real-Time Single Image and Video Super-Resolution Using an Efficient<br>Sub-Pixel Convolutional Neural Network’</p>
+<p>—<br><img src="D:/home/clearlovewl.github.io/source/_posts/seeindark/2.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<p>—</p>
+<p>—<br><img src="D:/home/clearlovewl.github.io/source/_posts/seeindark/5.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
+<p>—</p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>Images produced by the traditional pipeline in extreme low-light conditions suffer from severe noise and color distortion.</p>
+<p>The  result  of  our  net-work, trained on images from a different camera, has good contrast, low noise, and well-adjusted color</p>
+<p>—<br><img src="D:/home/clearlovewl.github.io/source/_posts/seeindark/4.png" alt="2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="900px"   --></p>
+<p>—</p>
+<blockquote>
+<p><a href="https://clearlovewl.github.io/2019/03/27/seeindark/slide.html" target="_blank" rel="noopener">ppt</a><br><a href="http://localhost:4000/2019/03/27/seeindark/slide.html" target="_blank" rel="noopener">ppt</a></p>
 </blockquote>
-<p><img src="/fcn/fcn.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
-<hr>
-<h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><p>Convolutional networks are powerful visual models that yield  hierarchies  of  features.FCN show  that  convolutional networks by themselves, trained end-to-end, pixels-to-pixels,  exceed  the  state-of-the-art  in  semantic  segmentation.<br><img src="/fcn/fcn.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
-<p>—</p>
-<h2 id="Adapting-classifiers-for-dense-prediction"><a href="#Adapting-classifiers-for-dense-prediction" class="headerlink" title="Adapting classifiers for dense prediction"></a>Adapting classifiers for dense prediction</h2><p>typical recognition nets,  ostensibly  take fixed-sized inputs and produce nonspatial outputs. the fully connected layers of these nets have fixed dimensions and throw away spatial coordinates.  however, these fully connected layers can also be viewed as convolutions with kernels  that  cover  their  entire  input  regions.   doing  so  casts them  into  fully  convolutional  networks  that  take  input  of any size and output classification maps.</p>
-<p>—<br><img src="/fcn/fcnx.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<p>—</p>
-<h2 id="Segmentation-Architecture"><a href="#Segmentation-Architecture" class="headerlink" title="Segmentation Architecture"></a>Segmentation Architecture</h2><p><img src="/fcn/fcn2.png" alt="fcn2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
-<p>—<br>we address this by adding links that combine the final prediction layer with lower layers with finer strides.  this turns a line topology into a dag, with edges that skip ahead from lower layers to higher ones .   as they see fewer pixels, the finer scale predictions should need fewerlayers, so it makes sense to make them from shallower netoutputs.   combining fine layers and coarse layers lets the model make local predictions that respect global structure.</p>
-<p>—<br><img src="/fcn/vgg.png" alt="vgg"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<p>—<br><img src="/fcn/fcn8.png" alt="fcn2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<p>—</p>
-<h2 id="Transpose-Convolution"><a href="#Transpose-Convolution" class="headerlink" title="Transpose Convolution"></a>Transpose Convolution</h2><p><img src="/fcn/tconv.png" alt="tconv"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
-<hr>
-<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>table  gives the performance of ourfcn-8s on the test sets of pascal voc 2011 and 2012,and compares it to the previous state-of-the-art, sds [16],and the well-known r-cnn [12].  we achieve the best results on mean iu by a relative margin of 20%.  inference time is reduced114×(convnet only, ignoring proposals and refinement) or 286×(overall)</p>
-<p><img src="/fcn/xiaoguo.png" alt="xiaoguo"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="200px"   --></p>
 
       
     </div>
@@ -361,7 +367,7 @@
           
             <a href="/tags/pytorch/" rel="tag"># pytorch</a>
           
-            <a href="/tags/分割/" rel="tag"># 分割</a>
+            <a href="/tags/image-increasing/" rel="tag"># image increasing</a>
           
         </div>
       
@@ -374,8 +380,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/08/pytorch-data/" rel="next" title="pytorch加载数据">
-                <i class="fa fa-chevron-left"></i> pytorch加载数据
+              <a href="/2019/02/26/Artisticstyle/" rel="next" title="A Neural Algorithm of Artistic Style">
+                <i class="fa fa-chevron-left"></i> A Neural Algorithm of Artistic Style
               </a>
             
           </div>
@@ -383,10 +389,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/20/midinet/" rel="prev" title="A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION">
-                A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -509,7 +511,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABSTRCT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adapting-classifiers-for-dense-prediction"><span class="nav-number">2.</span> <span class="nav-text">Adapting classifiers for dense prediction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmentation-Architecture"><span class="nav-number">3.</span> <span class="nav-text">Segmentation Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transpose-Convolution"><span class="nav-number">4.</span> <span class="nav-text">Transpose Convolution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">5.</span> <span class="nav-text">Results</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABSTRCT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#dataset"><span class="nav-number">2.</span> <span class="nav-text">dataset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods"><span class="nav-number">3.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">4.</span> <span class="nav-text">Results</span></a></li></ol></div>
             
 
           </div>
