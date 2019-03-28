@@ -74,7 +74,7 @@
 
 
 ![1](/seeindark/2.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   -->
+<!-- .element style="border: 0; background: None; box-shadow: None" width="1900px"   -->
 
 
 
@@ -85,7 +85,11 @@
 
 ## ABSTRCT
 
-Imaging in low light is challenging due to low photon count and low SNR . Short-exposure images suffer from noise, while long exposure can induce blur and is often impractical.  A variety of denoising , deblurring , and enhancement techniques have been proposed, but their effectiveness is limited in extreme conditions, such as video-rate imaging at night. To support the development of learning-based pipelines for low-light image processing, we introduce a dataset of raw short-exposure low-light images, with corresponding long-exposure reference images. Using the presented dataset, we develop a pipeline for processing low light images, based on end-to-end training of a fully convolutional network. The network operates directly on raw sensor data and replaces much of the traditional image processing pipeline, which tends to perform poorly on such data. 
+1. Imaging in low light is challenging due to low photon count and low SNR . Short-exposure images suffer from noise, while long exposure can induce blur and is often impractical. 
+2.  A variety of denoising , deblurring , and enhancement techniques have been proposed, but their effectiveness is limited in extreme conditions, such as video-rate imaging at night. 
+3. To support the development of learning-based pipelines for low-light image processing, we introduce a dataset of raw short-exposure low-light images, with corresponding long-exposure reference images. 
+4. Using the presented dataset, we develop a pipeline for processing low light images, based on end-to-end training of a fully convolutional network. 
+5. The network operates directly on raw sensor data and replaces much of the traditional image processing pipeline, which tends to perform poorly on such data. 
 
 --
 
@@ -101,12 +105,12 @@ Imaging in low light is challenging due to low photon count and low SNR . Short-
 --
 
 ![1](/seeindark/1.jpg)
-<!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   -->
+<!-- .element style="border: 0; background: None; box-shadow: None" width="1900px"   -->
 
 --
 
 ![1](/seeindark/3.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   -->
+<!-- .element style="border: 0; background: None; box-shadow: None" height="1500px" width="1500px"   -->
 
 --
 
@@ -126,13 +130,13 @@ Imaging in low light is challenging due to low photon count and low SNR . Short-
 
 --
 ![1](/seeindark/2.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   -->
+<!-- .element style="border: 0; background: None; box-shadow: None" width="1900px"   -->
 
 --
 
---
+
 ![1](/seeindark/5.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   -->
+<!-- .element style="border: 0; background: None; box-shadow: None" width="1900px"   -->
 
 --
 
@@ -140,15 +144,20 @@ Imaging in low light is challenging due to low photon count and low SNR . Short-
 
 ## Results
 
-Images produced by the traditional pipeline in extreme low-light conditions suffer from severe noise and color distortion.
-
-The  result  of  our  net-work, trained on images from a different camera, has good contrast, low noise, and well-adjusted color
+1. Images produced by the traditional pipeline in extreme low-light conditions suffer from severe noise and color distortion.
+2. The  result  of  our  net-work, trained on images from a different camera, has good contrast, low noise, and well-adjusted color
 
 
 
 --
+
+![2](/seeindark/6.png)
+
+<!-- .element style="border: 0; background: None; box-shadow: None" width="1900px"   -->
+
+--
 ![2](/seeindark/4.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" height="900px"   -->
+<!-- .element style="border: 0; background: None; box-shadow: None" width="1900px"   -->
 
 --
 
@@ -227,15 +236,15 @@ Reveal.initialize({
   // - 设置为 0 时，禁止沿轴运动
   parallaxBackgroundHorizontal: null,
   parallaxBackgroundVertical: null,
-  width: 1280,
-	height: 900,
+  width: 1920,
+	height: 1200,
 
 	// Factor of the display size that should remain empty around the content
-	margin: 0.05,
+	margin: 0.8,
 
 	// Bounds for smallest/largest possible scale to apply to content
-	minScale: 0.6,
-	maxScale: 1.,
+	minScale: 0.9,
+	maxScale: 1.9,
   // More info https://github.com/hakimel/reveal.js#dependencies
   math: {
 		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
