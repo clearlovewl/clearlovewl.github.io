@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="pytorch,style transfer,">
+  <meta name="keywords" content="torch,IQA,">
 
 
 
@@ -79,23 +79,21 @@
 
 
 
-<meta name="description" content="A Neural Algorithm of Artistic Style">
-<meta name="keywords" content="pytorch,style transfer">
+<meta name="description" content="MEON">
+<meta name="keywords" content="torch,IQA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A Neural Algorithm of Artistic Style">
-<meta property="og:url" content="http://yoursite.com/2019/02/26/Artisticstyle/index.html">
+<meta property="og:title" content="end to end image quality assessment using deep neuarl networks">
+<meta property="og:url" content="http://yoursite.com/2019/04/24/MEON/index.html">
 <meta property="og:site_name" content="wl-uestc">
-<meta property="og:description" content="A Neural Algorithm of Artistic Style">
+<meta property="og:description" content="MEON">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/Artisticstyle/1.png">
-<meta property="og:image" content="http://yoursite.com/Artisticstyle/1.png">
-<meta property="og:image" content="http://yoursite.com/Artisticstyle/1.png">
-<meta property="og:image" content="http://yoursite.com/Artisticstyle/2.png">
-<meta property="og:updated_time" content="2019-03-21T12:30:29.038Z">
+<meta property="og:image" content="http://yoursite.com/MEON/1556086746816.png">
+<meta property="og:image" content="http://yoursite.com/MEON/1556107219634.png">
+<meta property="og:updated_time" content="2019-04-24T12:27:53.398Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A Neural Algorithm of Artistic Style">
-<meta name="twitter:description" content="A Neural Algorithm of Artistic Style">
-<meta name="twitter:image" content="http://yoursite.com/Artisticstyle/1.png">
+<meta name="twitter:title" content="end to end image quality assessment using deep neuarl networks">
+<meta name="twitter:description" content="MEON">
+<meta name="twitter:image" content="http://yoursite.com/MEON/1556086746816.png">
 
 
 
@@ -125,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/02/26/Artisticstyle/">
+  <link rel="canonical" href="http://yoursite.com/2019/04/24/MEON/">
 
 
 
 
 
-  <title>A Neural Algorithm of Artistic Style | wl-uestc</title>
+  <title>end to end image quality assessment using deep neuarl networks | wl-uestc</title>
   
 
 
@@ -248,7 +246,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/02/26/Artisticstyle/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/MEON/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wang lei">
@@ -265,7 +263,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">A Neural Algorithm of Artistic Style</h1>
+          <h1 class="post-title" itemprop="name headline">end to end image quality assessment using deep neuarl networks</h1>
         
 
         <div class="post-meta">
@@ -277,8 +275,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-26T00:00:00+08:00">
-                2019-02-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-24T00:00:00+08:00">
+                2019-04-24
               </time>
             
 
@@ -302,7 +300,7 @@
 
           
               <div class="post-description">
-                  A Neural Algorithm of Artistic Style
+                  MEON
               </div>
           
 
@@ -319,42 +317,45 @@
       
 
       
-        <p><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<hr>
-<h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><ol>
-<li>在美术方面，特别是绘画中，人类已经掌握了创造的经验的技巧，在形象的内容和风格之间形成了复杂的体验。到目前为止，这一过程的基础是相似的，并且没有类似能力的人工系统。thus far the algorithmic basis of this process is unknown and there exists no artificial system with similar capabilities.然而，在视觉感知的其他关键领域，如检测和人脸识别，深度网络有接近人类的表现。</li>
-<li>here we introduce an artificial system based on a deep neural network that creates artistic images providing a neural algorithm for the creation of artistic images</li>
-<li>our work offers a path forward to an algorithmic under-standing of how humans create and perceive artistic imagery</li>
+        <p>—</p>
+<h2 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h2><ol>
+<li>we propose a   multi-task   end-to-end   optimized deep  neural  network  (MEON)  for  blind  image  quality  assessment (BIQA). </li>
+<li>MEON consists of two sub-networks—a distortion identification network and a quality prediction network sharing the  early  layers.</li>
+<li>Unlike  traditional  methods  used  for  training multi-task  networks,  our  training  process  is  performed  in  two steps. </li>
+<li>Different  from  most deep neural networks, we choose biologically inspired generalized divisive  normalization  (GDN)  instead  of  rectified  linear  unit  as the activation function</li>
+<li>achieves state of the art </li>
 </ol>
-<p>—<br><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
 <p>—</p>
-<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ol>
-<li><p>a layer with $N _ { l }$ distinct filters has $N _ { l }$ feature maps each of size $M _ { l }$，where $M _ { l }$ is the height times the width of the feature map.</p>
+<h2 id="MEON-FOR-BIQA"><a href="#MEON-FOR-BIQA" class="headerlink" title="MEON FOR BIQA"></a>MEON FOR BIQA</h2><ol>
+<li><p>we take a raw image of 256 256 3 as input .</p>
 </li>
-<li><p>so the responses in a layer l can be stored in a matrix $F ^ { l } \in \mathcal { R } ^ { N _ { l } \times M _ { l } }​$  where $F _ { i j } ^ { l }​$    is the activation of the ith filter at position j in layer l</p>
+<li><p>MEON consists of two subtasks accomplished by two sub-networks.</p>
 </li>
-<li><p>so let    $\vec { p }$    and    $\vec {x}$    be the original image and the image that is generated and    $P ^ { l }$    and    $F ^ { l }​$    their respective feature representation in layer l.  we then define the squared-error loss between the two feature representations</p>
-<script type="math/tex; mode=display">
-\mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } , l ) = \frac { 1 } { 2 } \sum _ { i , j } \left( F _ { i j } ^ { l } - P _ { i j } ^ { l } \right) ^ { 2 }</script><p>—</p>
+<li><p>we pre-trained the shared layers in MEON via Subtask I and then jointly optimize the entire network with unified loss function .</p>
 </li>
 </ol>
-<p>4  these feature correlations are given by the gram matrix    $G ^ { l } \in \mathcal { R } ^ { N _ { l } \times N _ { l } }​$     where     $G _ { i j } ^ { l }​$    is the inner product between the feature map i and j in layer l  :</p>
-<script type="math/tex; mode=display">
-G _ { i j } ^ { l } = \sum _ { k } F _ { i k } ^ { l } F _ { j k } ^ { l }</script><p>5  so let    $\vec { a }$    and    $\vec { x }$    be the original image and the image that is generated and    $A ^ { l }$     and      $G ^ { l }$     their respective style representations in layer l.  the contribution of that layer to the total loss is then  </p>
-<script type="math/tex; mode=display">
-   E _ { l } = \frac { 1 } { 4 N _ { l } ^ { 2 } M _ { l } ^ { 2 } } \sum _ { i , j } \left( G _ { i j } ^ { l } - A _ { i j } ^ { l } \right) ^ { 2 }</script><p>   and the total loss is</p>
-<script type="math/tex; mode=display">
-    \mathcal { L } _ { s t y l e } ( \vec { a } , \vec { x } ) = \sum _ { l = 0 } ^ { L } w _ { l } E _ { l }</script><p>—</p>
-<p>6  so let $\vec { p }$  be the photograph and $\vec { a }$ be the artwork. the loss function we minimise is </p>
-<script type="math/tex; mode=display">
-\mathcal { L } _ { \text {total} } ( \vec { p } , \vec { a } , \vec { x } ) = \alpha \mathcal { L } _ { \text {content} } ( \vec { p } , \vec { x } ) + \beta \mathcal { L } _ { \text {style} } ( \vec { a } , \vec { x } )</script><p>   where α and β are the weighting factors for content and style reconstruction respectively</p>
-<p>—<br><img src="/Artisticstyle/1.png" alt="1"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
 <p>—</p>
-<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>fig 2 shows results for different relative weightings of the content and style reconstruction loss (along the columns) and for matching the style representations only on layer ‘conv11’ (a), ‘conv11’ and ‘conv21’ (b), ‘conv11’, ‘conv21’ and ‘conv31’ (c),‘conv11’, ‘conv21’, ‘conv31’ and ‘conv41’ (d), ‘conv11’, ‘conv21’, ‘conv31’, ‘conv41’and ‘conv51’ (e). </p>
-<p>—<br><img src="/Artisticstyle/2.png" alt="2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="900px"   --></p>
+<h6 id="GDN-as-Activation-Function"><a href="#GDN-as-Activation-Function" class="headerlink" title="GDN as Activation Function"></a>GDN as Activation Function</h6><script type="math/tex; mode=display">
+y_{i}(m, n)=\frac{x_{i}(m, n)}{\left(\beta_{i}+\sum_{j=1}^{S} \gamma_{i j} x_{j}(m, n)^{2}\right)^{\frac{1}{2}}}</script><p>—</p>
+<h6 id="Network-Architecture"><a href="#Network-Architecture" class="headerlink" title="Network Architecture"></a>Network Architecture</h6><p><img src="\MEON\1556086746816.png" alt="1556086746816"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   --></p>
 <p>—</p>
+<script type="math/tex; mode=display">
+\hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)=\frac{\exp \left(y_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}{\sum_{j=1}^{C} \exp \left(y_{j}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}</script><script type="math/tex; mode=display">
+\ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)=-\sum_{k=1}^{K} \sum_{i=1}^{C} p_{i}^{(k)} \log \hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)</script><p>—</p>
+<script type="math/tex; mode=display">
+\hat{q}^{(k)}=\hat{\mathbf{p}}^{(k) T} \mathbf{s}^{(k)}=\sum_{i=1}^{C} \hat{p}_{i}^{(k)} \cdot s_{i}^{(k)}</script><script type="math/tex; mode=display">
+\ell_{2}\left(\left\{\mathbf{X}^{(k)}\right] ; \mathbf{W}, \mathbf{w}_{2}\right)=\|\mathbf{q}-\hat{\mathbf{q}}\|_{1}=\sum_{k=1}^{K}\left|q^{(k)}-\hat{q}^{(k)}\right|</script><script type="math/tex; mode=display">
+\ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)=\ell_{1}+\lambda \ell_{2}</script><p>—</p>
+<h6 id="Training-and-Testing"><a href="#Training-and-Testing" class="headerlink" title="Training and Testing"></a>Training and Testing</h6><p>At  the  pre-training  step,we minimize the loss function in Subtask I </p>
+<script type="math/tex; mode=display">
+\left(\hat{\mathbf{W}}, \hat{\mathbf{w}}_{1}\right)=\arg \min \ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)</script><p>At  the  joint  optimization  step,we minimize the overall loss function </p>
+<script type="math/tex; mode=display">
+\left(\mathbf{W}^{\star}, \mathbf{w}_{1}^{\star}, \mathbf{w}_{2}^{\star}\right)=\operatorname{argmin} \ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)</script><p>During testing ,given an image ,we extract 256 256 3 sub-images with a stride of U.</p>
+<p>—</p>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p><img src="\MEON\1556107219634.png" alt="1556107219634"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   --></p>
 <blockquote>
-<p><a href="https://clearlovewl.github.io/2019/02/26/Artisticstyle/slide.html" target="_blank" rel="noopener">ppt</a><br><a href="http://localhost:4000/2019/02/26/Artisticstyle/slide.html" target="_blank" rel="noopener">ppt</a></p>
+<p><a href="https://clearlovewl.github.io/2019/04/24/MEON/slide.html" target="_blank" rel="noopener">ppt</a></p>
+<p><a href="http://localhost:4000/2019/04/24/MEON/slide.html" target="_blank" rel="noopener">ppt</a></p>
 </blockquote>
 
       
@@ -373,9 +374,9 @@ G _ { i j } ^ { l } = \sum _ { k } F _ { i k } ^ { l } F _ { j k } ^ { l }</scri
       
         <div class="post-tags">
           
-            <a href="/tags/pytorch/" rel="tag"># pytorch</a>
+            <a href="/tags/torch/" rel="tag"># torch</a>
           
-            <a href="/tags/style-transfer/" rel="tag"># style transfer</a>
+            <a href="/tags/IQA/" rel="tag"># IQA</a>
           
         </div>
       
@@ -388,8 +389,8 @@ G _ { i j } ^ { l } = \sum _ { k } F _ { i k } ^ { l } F _ { j k } ^ { l }</scri
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/20/midinet/" rel="next" title="A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION">
-                <i class="fa fa-chevron-left"></i> A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION
+              <a href="/2019/03/27/seeindark/" rel="next" title="Learning to See in the Dark">
+                <i class="fa fa-chevron-left"></i> Learning to See in the Dark
               </a>
             
           </div>
@@ -397,10 +398,6 @@ G _ { i j } ^ { l } = \sum _ { k } F _ { i k } ^ { l } F _ { j k } ^ { l }</scri
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/27/seeindark/" rel="prev" title="Learning to See in the Dark">
-                Learning to See in the Dark <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -523,7 +520,7 @@ G _ { i j } ^ { l } = \sum _ { k } F _ { i k } ^ { l } F _ { j k } ^ { l }</scri
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABSTRCT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">3.</span> <span class="nav-text">Results</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABSTRACT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRACT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MEON-FOR-BIQA"><span class="nav-number">2.</span> <span class="nav-text">MEON FOR BIQA</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#GDN-as-Activation-Function"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">GDN as Activation Function</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Network-Architecture"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">Network Architecture</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Training-and-Testing"><span class="nav-number">2.0.0.0.3.</span> <span class="nav-text">Training and Testing</span></a></li></ol></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">3.</span> <span class="nav-text">Results</span></a></li></div>
             
 
           </div>

@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Learning to See in the Dark</title>
+        <title>end to end image quality assessment using deep neuarl networks</title>
 
         <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/css/reveal.min.css">
         
@@ -64,7 +64,7 @@
                          data-separator="^\n---\n"
                          data-separator-vertical="^\n--\n"
                          data-separator-notes="^Note:">
-                    <script type="text/template">Learning to See in the Dark
+                    <script type="text/template">end to end image quality assessment using deep neuarl networks
 
 
 
@@ -72,96 +72,107 @@
 --
 
 
+# ABSTRACT
 
-![1](/seeindark/2.png)
+1. we propose a   multi-task   end-to-end   optimized deep  neural  network  (MEON)  for  blind  image  quality  assessment (BIQA). 
+2. MEON consists of two sub-networks—a distortion identification network and a quality prediction network sharing the  early  layers.
+3.   Unlike  traditional  methods  used  for  training multi-task  networks,  our  training  process  is  performed  in  two steps. 
+4. Different  from  most deep neural networks, we choose biologically inspired generalized divisive  normalization  (GDN)  instead  of  rectified  linear  unit  as the activation function
+5. achieves state of the art 
+
+--
+
+
+# MEON FOR BIQA 
+
+1.  we take a raw image of 256 256 3 as input .
+
+2. MEON consists of two subtasks accomplished by two sub-networks.
+
+3. we pre-trained the shared layers in MEON via Subtask I and then jointly optimize the entire network with unified loss function .
+
+   
+
+--
+
+
+## GDN as Activation Function
+
+
+
+`$y_{i}(m, n)=\frac{x_{i}(m, n)}{\left(\beta_{i}+\sum_{j=1}^{S} \gamma_{i j} x_{j}(m, n)^{2}\right)^{\frac{1}{2}}}$`
+
+
+
+
+
+--
+
+
+## Network Architecture
+
+
+
+![1556086746816](\MEON\1556086746816.png)
 <!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 
 
+--
+
+
+`$$
+\hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)=\frac{\exp \left(y_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}{\sum_{j=1}^{C} \exp \left(y_{j}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}
+$$`
+
+`$$
+\ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)=-\sum_{k=1}^{K} \sum_{i=1}^{C} p_{i}^{(k)} \log \hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)
+$$`
+
+--
+
+`$$
+\hat{q}^{(k)}=\hat{\mathbf{p}}^{(k) T} \mathbf{s}^{(k)}=\sum_{i=1}^{C} \hat{p}_{i}^{(k)} \cdot s_{i}^{(k)}
+$$`
+
+`$$
+\ell_{2}\left(\left\{\mathbf{X}^{(k)}\right] ; \mathbf{W}, \mathbf{w}_{2}\right)=\|\mathbf{q}-\hat{\mathbf{q}}\|_{1}=\sum_{k=1}^{K}\left|q^{(k)}-\hat{q}^{(k)}\right|
+$$`
+
+`$$
+\ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)=\ell_{1}+\lambda \ell_{2}
+$$`
+
 
 --
 
 
+## Training and Testing 
 
+1. At  the  pre-training  step,we minimize the loss function in Subtask I 
+`$$
+\left(\hat{\mathbf{W}}, \hat{\mathbf{w}}_{1}\right)=\arg \min \ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)
+$$`
+2. At  the  joint  optimization  step,we minimize the overall loss function 
+`$$
+\left(\mathbf{W}^{\star}, \mathbf{w}_{1}^{\star}, \mathbf{w}_{2}^{\star}\right)=\operatorname{argmin} \ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)
+$$`
 
-## ABSTRCT
-
-1. Imaging in low light is challenging due to low photon count and low SNR . Short-exposure images suffer from noise, while long exposure can induce blur and is often impractical. 
-2.  A variety of denoising , deblurring , and enhancement techniques have been proposed, but their effectiveness is limited in extreme conditions, such as video-rate imaging at night. 
-3. To support the development of learning-based pipelines for low-light image processing, we introduce a dataset of raw short-exposure low-light images, with corresponding long-exposure reference images. 
-4. Using the presented dataset, we develop a pipeline for processing low light images, based on end-to-end training of a fully convolutional network. 
-5. The network operates directly on raw sensor data and replaces much of the traditional image processing pipeline, which tends to perform poorly on such data. 
-
---
-
-
-
-## dataset
-
-1. We collected a new dataset for training and benchmarking single image processing of raw low light images.  The See-in-the-Dark  (SID)  dataset  contains  5094  raw  short exposure images, each with a corresponding long exposure reference image. 
-2. The  dataset  contains  both  indoor  and  outdoor  images
-
+3. During testing ,given an image ,we extract 256 256 3 sub-images with a stride of U.
 
 
 --
 
-![1](/seeindark/1.jpg)
+
+# Results
+
+
+
+![1556107219634](\MEON\1556107219634.png)
 <!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 
---
+> [ppt]( https://clearlovewl.github.io/2019/04/24/MEON/slide.html)
 
-![1](/seeindark/3.png)
-<!-- .element style="border: 0; background: None; box-shadow: None"  width="1200px"   -->
-
---
-
-## Methods
-
-1. For Bayer arrays, we pack the input into four channels and correspondingly reduce the spatial resolution by a factor of two in each dimension. 
-2. We subtract the black level and scale the data by the desired ampliﬁcation ratio (e.g., x100 or x300). 
-3. We train the networks from scratch using the L1 lossand the Adam optimizer 
-4. Super-Resolution from 'Real-Time Single Image and Video Super-Resolution Using an Efficient
-   Sub-Pixel Convolutional Neural Network'
-
-
-
-
-
-
-
---
-![1](/seeindark/2.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
-
---
-
-
-![1](/seeindark/5.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
-
---
-
-
-
-## Results
-
-1. Images produced by the traditional pipeline in extreme low-light conditions suffer from severe noise and color distortion.
-2. The  result  of  our  net-work, trained on images from a different camera, has good contrast, low noise, and well-adjusted color
-
-
-
---
-
-![2](/seeindark/6.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
-
---
-![2](/seeindark/4.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
-
---
-
-> [ppt]( https://clearlovewl.github.io/2019/03/27/seeindark/slide.html)
-> [ppt]( http://localhost:4000/2019/03/27/seeindark/slide.html)</script>
+> [ppt]( http://localhost:4000/2019/04/24/MEON/slide.html)</script>
                 </section>
             </div>
         </div>

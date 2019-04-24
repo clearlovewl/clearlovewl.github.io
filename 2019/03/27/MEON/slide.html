@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Learning to See in the Dark</title>
+        <title>end to end image quality assessment using deep neuarl networks</title>
 
         <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/css/reveal.min.css">
         
@@ -64,104 +64,104 @@
                          data-separator="^\n---\n"
                          data-separator-vertical="^\n--\n"
                          data-separator-notes="^Note:">
-                    <script type="text/template">Learning to See in the Dark
+                    <script type="text/template">end to end image quality assessment using deep neuarl networks
 
-
-
-
---
-
-
-
-![1](/seeindark/2.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
-
-
-
---
 
 
 
 
 ## ABSTRCT
 
-1. Imaging in low light is challenging due to low photon count and low SNR . Short-exposure images suffer from noise, while long exposure can induce blur and is often impractical. 
-2.  A variety of denoising , deblurring , and enhancement techniques have been proposed, but their effectiveness is limited in extreme conditions, such as video-rate imaging at night. 
-3. To support the development of learning-based pipelines for low-light image processing, we introduce a dataset of raw short-exposure low-light images, with corresponding long-exposure reference images. 
-4. Using the presented dataset, we develop a pipeline for processing low light images, based on end-to-end training of a fully convolutional network. 
-5. The network operates directly on raw sensor data and replaces much of the traditional image processing pipeline, which tends to perform poorly on such data. 
-
---
+1. we propose MEON.
+2. MEON consists of ...
+3. unlike traditional way 
+4. different from
+5. achieves state of the art 
 
 
 
-## dataset
+## Introduction
 
-1. We collected a new dataset for training and benchmarking single image processing of raw low light images.  The See-in-the-Dark  (SID)  dataset  contains  5094  raw  short exposure images, each with a corresponding long exposure reference image. 
-2. The  dataset  contains  both  indoor  and  outdoor  images
+1. BIQA aims to ...[1] .not be resolved[2]. (BIQA motivation)
+2. Early ,handcrafted features[3-6],rely on HVS[7-8].prediction function built upon feature representation.feature extraction and quality prediction stages are designed separately.(Early method's problems)
+3. with development of ... ,... becomes possible.(now can solve the problems)
 
 
 
---
 
-![1](/seeindark/1.jpg)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 
---
+1. DNN has shown great promises in many vision tasks,but BIQA is challenging due to lack of samples for training  (the problems about DNN in BIQA)
 
-![1](/seeindark/3.png)
-<!-- .element style="border: 0; background: None; box-shadow: None"  width="1200px"   -->
+2. Note that largest database in  BIQA contains only 3000 annotations,while digital images live in a space of millions of dimensions.(introduce above problems)
 
---
+3. previous DNN-based BIQA methods tackle this challenge in three ways.first ,pre-trained,
 
-## Methods
+   second,assign all patches a MOS .three limitations,score of patches with out context is not well defined .local image quality within context varies across spatial locations .pathes with similar statistical behaviors may have substantially different quality. (how solve this problem in previous way)
 
-1. For Bayer arrays, we pack the input into four channels and correspondingly reduce the spatial resolution by a factor of two in each dimension. 
-2. We subtract the black level and scale the data by the desired ampliﬁcation ratio (e.g., x100 or x300). 
-3. We train the networks from scratch using the L1 lossand the Adam optimizer 
-4. Super-Resolution from 'Real-Time Single Image and Video Super-Resolution Using an Efficient
-   Sub-Pixel Convolutional Neural Network'
+   third,make use of full-reference IQA models for quality annotation. their performances is directly affected by...
+
+   Other methods for generating training data involve the creation of synthetic scores and disciminable image pairs,both of which rely on ..suffer from...
 
 
 
 
 
 
+1. In this work, we describe a framework for ...BIQA based on ...,Motivated by previous works[16 24],we ....
 
---
-![1](/seeindark/2.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+2. on the one hand, ...because, on the other hand ,.... as shown in fig .1.  shared features at early layers.
 
---
+   feature sharing not only ... ,but also  
+
+   enables the network to pre-train the shared layers via subtask I,for which large-scale training data can be automatically generated at low cost.
+
+3. unlike traditional multi-task learning..., as show in .as such ,...for better prediciton
+
+4. we defined a layer ...to guarantee the feasibility of backpropagation.
+
+5. after pre-trained,the entire network is end to end optimized using a variant of the stochastic gradient method.
+
+6. In addition,instead of using rectified linear unit ,we adopt generalized divisive normalization joint nonlineartity as the activation function that .....(good)[26-28] we empirically show that ...
+
+7. we evaluate the resulting on ...,demonstrate that it achieves....
 
 
-![1](/seeindark/5.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+## RELATED WORK
 
---
+In this section,we provide a brief review of...and previous studies closely related to our work.
+
+1. early BIQA research focused on extracting distortion-specific features that can handle only one distortion type .such as 
+2. ...features are popular .
+3. 
+
+s
+
+
+
+## MEON FOR BIQA 
+
+1.  we take a raw image of 256 256 3 as input .
+
+2. MEON consists of ..
+
+3. I aims to ,II whose goal is to .each subtask involves a loss function. 
+
+4. pre-trained the shared layers in MEON via Subtask I and then jointly optimize the entire network with unified loss function .(how loss train)
+
+5. In this section, we first describe GDN as our nonlinear activation function used in MEON and then present in detail the construction of the two subtasks in Fig. 3. Finally,we introduce our end to end training and testing procedures.
+
+   
+
+
+
+
 
 
 
 ## Results
 
 1. Images produced by the traditional pipeline in extreme low-light conditions suffer from severe noise and color distortion.
-2. The  result  of  our  net-work, trained on images from a different camera, has good contrast, low noise, and well-adjusted color
-
-
-
---
-
-![2](/seeindark/6.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
-
---
-![2](/seeindark/4.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
-
---
-
-> [ppt]( https://clearlovewl.github.io/2019/03/27/seeindark/slide.html)
-> [ppt]( http://localhost:4000/2019/03/27/seeindark/slide.html)</script>
+</script>
                 </section>
             </div>
         </div>

@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content=",,">
 
 
 
@@ -79,13 +79,18 @@
 
 
 
+<meta name="description" content="MEON">
+<meta name="keywords" content="pytorch,image increasing">
 <meta property="og:type" content="website">
-<meta property="og:title" content="wl-uestc">
-<meta property="og:url" content="http://yoursite.com/archives/2019/02/index.html">
+<meta property="og:title" content="end to end image quality assessment using deep neuarl networks">
+<meta property="og:url" content="http://yoursite.com/MEON.html">
 <meta property="og:site_name" content="wl-uestc">
+<meta property="og:description" content="MEON">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-04-17T13:03:18.360Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wl-uestc">
+<meta name="twitter:title" content="end to end image quality assessment using deep neuarl networks">
+<meta name="twitter:description" content="MEON">
 
 
 
@@ -115,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/02/">
+  <link rel="canonical" href="http://yoursite.com/MEON.html">
 
 
 
 
 
-  <title>Archive | wl-uestc</title>
+  <title>end to end image quality assessment using deep neuarl networks | wl-uestc</title>
   
 
 
@@ -140,7 +145,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -224,72 +229,103 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
 
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 7 posts in total. Keep on posting.
-      </span>
+	<h1 class="post-title" itemprop="name headline">end to end image quality assessment using deep neuarl networks</h1>
+
+
+	<div class="post-meta">
+		<div class="post-description">MEON</div>
+	</div>
+
+
+</header>
 
       
+      
+      
+      <div class="post-body">
+        
+        
+          <h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><ol>
+<li>we propose MEON.</li>
+<li>MEON consists of …</li>
+<li>unlike traditional way </li>
+<li>different from</li>
+<li>achieves state of the art </li>
+</ol>
+<h2 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h2><ol>
+<li>BIQA aims to …[1] .not be resolved[2]. (BIQA motivation)</li>
+<li>Early ,handcrafted features[3-6],rely on HVS[7-8].prediction function built upon feature representation.feature extraction and quality prediction stages are designed separately.(Early method’s problems)</li>
+<li>with development of … ,… becomes possible.(now can solve the problems)</li>
+</ol>
+<ol>
+<li><p>DNN has shown great promises in many vision tasks,but BIQA is challenging due to lack of samples for training  (the problems about DNN in BIQA)</p>
+</li>
+<li><p>Note that largest database in  BIQA contains only 3000 annotations,while digital images live in a space of millions of dimensions.(introduce above problems)</p>
+</li>
+<li><p>previous DNN-based BIQA methods tackle this challenge in three ways.first ,pre-trained,</p>
+<p>second,assign all patches a MOS .three limitations,score of patches with out context is not well defined .local image quality within context varies across spatial locations .pathes with similar statistical behaviors may have substantially different quality. (how solve this problem in previous way)</p>
+<p>third,make use of full-reference IQA models for quality annotation. their performances is directly affected by…</p>
+<p>Other methods for generating training data involve the creation of synthetic scores and disciminable image pairs,both of which rely on ..suffer from…</p>
+</li>
+</ol>
+<ol>
+<li><p>In this work, we describe a framework for …BIQA based on …,Motivated by previous works[16 24],we ….</p>
+</li>
+<li><p>on the one hand, …because, on the other hand ,…. as shown in fig .1.  shared features at early layers.</p>
+<p>feature sharing not only … ,but also  </p>
+<p>enables the network to pre-train the shared layers via subtask I,for which large-scale training data can be automatically generated at low cost.</p>
+</li>
+<li><p>unlike traditional multi-task learning…, as show in .as such ,…for better prediciton</p>
+</li>
+<li><p>we defined a layer …to guarantee the feasibility of backpropagation.</p>
+</li>
+<li><p>after pre-trained,the entire network is end to end optimized using a variant of the stochastic gradient method.</p>
+</li>
+<li><p>In addition,instead of using rectified linear unit ,we adopt generalized divisive normalization joint nonlineartity as the activation function that …..(good)[26-28] we empirically show that …</p>
+</li>
+<li><p>we evaluate the resulting on …,demonstrate that it achieves….</p>
+</li>
+</ol>
+<h2 id="RELATED-WORK"><a href="#RELATED-WORK" class="headerlink" title="RELATED WORK"></a>RELATED WORK</h2><p>In this section,we provide a brief review of…and previous studies closely related to our work.</p>
+<ol>
+<li>early BIQA research focused on extracting distortion-specific features that can handle only one distortion type .such as </li>
+<li>…features are popular .</li>
+<li></li>
+</ol>
+<p>s</p>
+<h2 id="MEON-FOR-BIQA"><a href="#MEON-FOR-BIQA" class="headerlink" title="MEON FOR BIQA"></a>MEON FOR BIQA</h2><ol>
+<li><p>we take a raw image of 256 256 3 as input .</p>
+</li>
+<li><p>MEON consists of ..</p>
+</li>
+<li><p>I aims to ,II whose goal is to .each subtask involves a loss function. </p>
+</li>
+<li><p>pre-trained the shared layers in MEON via Subtask I and then jointly optimize the entire network with unified loss function .(how loss train)</p>
+</li>
+<li><p>In this section, we first describe GDN as our nonlinear activation function used in MEON and then present in detail the construction of the two subtasks in Fig. 3. Finally,we introduce our end to end training and testing procedures.</p>
+</li>
+</ol>
+<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><ol>
+<li>Images produced by the traditional pipeline in extreme low-light conditions suffer from severe noise and color distortion.</li>
+</ol>
 
         
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/02/26/Artisticstyle/" itemprop="url">
-              
-                <span itemprop="name">A Neural Algorithm of Artistic Style</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-02-26T00:00:00+08:00" content="2019-02-26">
-          02-26
-        </time>
       </div>
-
-    </header>
-  </article>
-
-
-
       
-
+      
+      
     </div>
+    
+    
+    
   </div>
-  
-  
-  
-
-  
-
 
 
           </div>
@@ -297,6 +333,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -317,8 +357,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -369,6 +418,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABSTRCT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RELATED-WORK"><span class="nav-number">3.</span> <span class="nav-text">RELATED WORK</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MEON-FOR-BIQA"><span class="nav-number">4.</span> <span class="nav-text">MEON FOR BIQA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">5.</span> <span class="nav-text">Results</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -502,6 +567,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
