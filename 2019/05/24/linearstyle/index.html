@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="torch,style transfer,">
 
 
 
@@ -79,13 +79,21 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="wl-uestc">
-<meta property="og:url" content="http://yoursite.com/tags/image-increasing/index.html">
+<meta name="description" content="Learning Linear Transformations for Fast Arbitrary Style Transfer">
+<meta name="keywords" content="torch,style transfer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning Linear Transformations for Fast Arbitrary Style Transfer">
+<meta property="og:url" content="http://yoursite.com/2019/05/24/linearstyle/index.html">
 <meta property="og:site_name" content="wl-uestc">
+<meta property="og:description" content="Learning Linear Transformations for Fast Arbitrary Style Transfer">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/linearstyle/1558690351365.png">
+<meta property="og:image" content="http://yoursite.com/linearstyle/1558690935706.png">
+<meta property="og:updated_time" content="2019-05-24T09:47:06.897Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wl-uestc">
+<meta name="twitter:title" content="Learning Linear Transformations for Fast Arbitrary Style Transfer">
+<meta name="twitter:description" content="Learning Linear Transformations for Fast Arbitrary Style Transfer">
+<meta name="twitter:image" content="http://yoursite.com/linearstyle/1558690351365.png">
 
 
 
@@ -115,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/image-increasing/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/24/linearstyle/">
 
 
 
 
 
-  <title>Tag: image increasing | wl-uestc</title>
+  <title>Learning Linear Transformations for Fast Arbitrary Style Transfer | wl-uestc</title>
   
 
 
@@ -140,7 +148,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -224,52 +232,181 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>image increasing<small>Tag</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/24/linearstyle/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wang lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wl-uestc">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/03/27/seeindark/" itemprop="url">
-              
-                <span itemprop="name">Learning to See in the Dark</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Learning Linear Transformations for Fast Arbitrary Style Transfer</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-03-27T00:00:00+08:00" content="2019-03-27">
-          03-27
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-24T00:00:00+08:00">
+                2019-05-24
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  Learning Linear Transformations for Fast Arbitrary Style Transfer
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>—</p>
+<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><ol>
+<li>recent arbitrary style transfer methods transfer second order statistics from  reference image onto content image via a multiplication between content image features and a transformation matrix ,which is computed from features with a pre-determined algorithm.</li>
+<li>These algorithms either require computationally expensive operations,or fail to model the feature covariance and produce artifacts in synthesized images .</li>
+<li>generalized from these methods ,in this work,we derive the form of transformation matrix theoretically and present an arbitrary style transfer approach that learns the transformation matrix with a feed-forward network.</li>
+</ol>
+<p>—</p>
+<h1 id="Style-Transfer-by-Linear-Transformation"><a href="#Style-Transfer-by-Linear-Transformation" class="headerlink" title="Style Transfer by Linear Transformation"></a>Style Transfer by Linear Transformation</h1><p><img src="\linearstyle\1558690351365.png" alt="1558690351365"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   --></p>
+<p>‘’$$<br>\begin{array}{c}{\mathcal{L}_{\text {style}}=\frac{1}{N C}\left|\overline{F}_{d} \overline{F}_{d}^{\top}-\overline{\phi}_{s} \overline{\phi}_{s}^{\top}\right|_{F}^{2}} \\ {\text {s.t.} \quad \overline{F}_{d}=T \overline{F}_{c}}\end{array}</p>
+<script type="math/tex; mode=display">''
+
+''</script><p>T \overline{F}_{c} \overline{F}_{c}^{\top} T^{\top}=\overline{\phi}_{s} \overline{\phi}_{s}^{\top}</p>
+<script type="math/tex; mode=display">''
+
+''</script><p>T=\left(V_{s} D_{s}^{\frac{1}{2}} V_{s}^{\top}\right) U\left(V_{c} D_{c}^{-\frac{1}{2}} V_{c}^{\top}\right)</p>
+<script type="math/tex; mode=display">''
+
+
+
+''</script><p>\overline{F}_{d}+\operatorname{mean}\left(F_{s}\right)</p>
+<p>$$’’</p>
+<p>—</p>
+<h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><p><img src="\linearstyle\1558690935706.png" alt="1558690935706"></p>
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+<p>—</p>
+<blockquote>
+<p><a href="https://clearlovewl.github.io/2019/05/24/linearstyle/slide.html" target="_blank" rel="noopener">ppt</a></p>
+<p><a href="http://localhost:4000/2019/05/24/linearstyle/slide.html" target="_blank" rel="noopener">ppt</a></p>
+</blockquote>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/torch/" rel="tag"># torch</a>
+          
+            <a href="/tags/style-transfer/" rel="tag"># style transfer</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/20/stylegan/" rel="next" title="A Style-Based Generator Architecture for Generative Adversarial Networks">
+                <i class="fa fa-chevron-left"></i> A Style-Based Generator Architecture for Generative Adversarial Networks
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -277,6 +414,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -297,8 +438,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -349,6 +499,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ABSTRACT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRACT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Style-Transfer-by-Linear-Transformation"><span class="nav-number">2.</span> <span class="nav-text">Style Transfer by Linear Transformation</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Results"><span class="nav-number">3.</span> <span class="nav-text">Results</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -482,6 +648,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

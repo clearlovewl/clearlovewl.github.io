@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>end to end image quality assessment using deep neuarl networks</title>
+        <title>A Style-Based Generator Architecture for Generative Adversarial Networks</title>
 
         <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/css/reveal.min.css">
         
@@ -64,105 +64,41 @@
                          data-separator="^\n---\n"
                          data-separator-vertical="^\n--\n"
                          data-separator-notes="^Note:">
-                    <script type="text/template">end to end image quality assessment using deep neuarl networks
+                    <script type="text/template">A Style-Based Generator Architecture for Generative Adversarial Networks
 
 
 
 
 --
+
+
+
+![1558335696593](E:\home\clearlovewl.github.io\source\_posts\assets\1558335696593.png)
+
+
+
+
 
 
 # ABSTRACT
 
-1. we propose a   multi-task   end-to-end   optimized deep  neural  network  (MEON)  for  blind  image  quality  assessment (BIQA). 
-2. MEON consists of two sub-networks—a distortion identification network and a quality prediction network sharing the  early  layers.
-3.   Unlike  traditional  methods  used  for  training multi-task  networks,  our  training  process  is  performed  in  two steps. 
-4. Different  from  most deep neural networks, we choose biologically inspired generalized divisive  normalization  (GDN)  instead  of  rectified  linear  unit  as the activation function
-5. achieves state of the art 
+1. we 
 
 --
 
 
-# MEON FOR BIQA 
+# INtroduction
 
-1.  we take a raw image of 256 256 3 as input .
-
-2. MEON consists of two subtasks accomplished by two sub-networks.
-
-3. we pre-trained the shared layers in MEON via Subtask I and then jointly optimize the entire network with unified loss function .
-
-   
-
---
+1.  we 
 
 
-## GDN as Activation Function
+# Style based generator
 
-
-
-$y_{i}(m, n)=\frac{x_{i}(m, n)}{\left(\beta_{i}+\sum_{j=1}^{S} \gamma_{i j} x_{j}(m, n)^{2}\right)^{\frac{1}{2}}}$
+1. 
 
 
 
 
-
---
-
-
-## Network Architecture
-
-
-
-![1556086746816](\MEON\1556086746816.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
-
-
---
-
-$$
-\hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)=\frac{\exp \left(y_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}{\sum_{j=1}^{C} \exp \left(y_{j}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}
-$$
-
-$$
-\ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)=-\sum_{k=1}^{K} \sum_{i=1}^{C} p_{i}^{(k)} \log \hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)
-$$
-
---
-
-$$
-\hat{q}^{(k)}=\hat{\mathbf{p}}^{(k) T} \mathbf{s}^{(k)}=\sum_{i=1}^{C} \hat{p}_{i}^{(k)} \cdot s_{i}^{(k)}
-$$
-
-$$
-\ell_{2}\left(\left\{\mathbf{X}^{(k)}\right] ; \mathbf{W}, \mathbf{w}_{2}\right)=\|\mathbf{q}-\hat{\mathbf{q}}\|_{1}=\sum_{k=1}^{K}\left|q^{(k)}-\hat{q}^{(k)}\right|
-$$
-
-$$
-\ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)=\ell_{1}+\lambda \ell_{2}
-$$
-
-
---
-
-
-## Training and Testing 
-
-1. At  the  pre-training  step,we minimize the loss function in Subtask I 
-$$
-\left(\hat{\mathbf{W}}, \hat{\mathbf{w}}_{1}\right)=\arg \min \ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)
-$$
-2. At  the  joint  optimization  step,we minimize the overall loss function 
-$$
-\left(\mathbf{W}^{\star}, \mathbf{w}_{1}^{\star}, \mathbf{w}_{2}^{\star}\right)=\operatorname{argmin} \ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)
-$$
-
-3. During testing ,given an image ,we extract 256 256 3 sub-images with a stride of U.
-
-
---
-
-
-# Results
 
 
 
