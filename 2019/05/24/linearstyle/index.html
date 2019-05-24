@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="torch,style transfer,">
+  <meta name="keywords" content="style transfer,torch,">
 
 
 
@@ -80,7 +80,7 @@
 
 
 <meta name="description" content="Learning Linear Transformations for Fast Arbitrary Style Transfer">
-<meta name="keywords" content="torch,style transfer">
+<meta name="keywords" content="style transfer,torch">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Learning Linear Transformations for Fast Arbitrary Style Transfer">
 <meta property="og:url" content="http://yoursite.com/2019/05/24/linearstyle/index.html">
@@ -89,7 +89,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/linearstyle/1558690351365.png">
 <meta property="og:image" content="http://yoursite.com/linearstyle/1558690935706.png">
-<meta property="og:updated_time" content="2019-05-24T09:47:06.897Z">
+<meta property="og:updated_time" content="2019-05-24T10:00:35.796Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Learning Linear Transformations for Fast Arbitrary Style Transfer">
 <meta name="twitter:description" content="Learning Linear Transformations for Fast Arbitrary Style Transfer">
@@ -325,19 +325,17 @@
 </ol>
 <p>—</p>
 <h1 id="Style-Transfer-by-Linear-Transformation"><a href="#Style-Transfer-by-Linear-Transformation" class="headerlink" title="Style Transfer by Linear Transformation"></a>Style Transfer by Linear Transformation</h1><p><img src="\linearstyle\1558690351365.png" alt="1558690351365"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   --></p>
-<p>‘’$$<br>\begin{array}{c}{\mathcal{L}_{\text {style}}=\frac{1}{N C}\left|\overline{F}_{d} \overline{F}_{d}^{\top}-\overline{\phi}_{s} \overline{\phi}_{s}^{\top}\right|_{F}^{2}} \\ {\text {s.t.} \quad \overline{F}_{d}=T \overline{F}_{c}}\end{array}</p>
-<script type="math/tex; mode=display">''
-
-''</script><p>T \overline{F}_{c} \overline{F}_{c}^{\top} T^{\top}=\overline{\phi}_{s} \overline{\phi}_{s}^{\top}</p>
-<script type="math/tex; mode=display">''
-
-''</script><p>T=\left(V_{s} D_{s}^{\frac{1}{2}} V_{s}^{\top}\right) U\left(V_{c} D_{c}^{-\frac{1}{2}} V_{c}^{\top}\right)</p>
-<script type="math/tex; mode=display">''
-
-
-
-''</script><p>\overline{F}_{d}+\operatorname{mean}\left(F_{s}\right)</p>
-<p>$$’’</p>
+<p>—</p>
+<p><code>$\begin{array}{c}{\mathcal{L}_{\text {style}}=\frac{1}{N C}\left\|\overline{F}_{d} \overline{F}_{d}^{\top}-\overline{\phi}_{s} \overline{\phi}_{s}^{\top}\right\|_{F}^{2}} \\ {\text {s.t.} \quad \overline{F}_{d}=T \overline{F}_{c}}\end{array}$</code></p>
+<p>`</p>
+<script type="math/tex; mode=display">
+T \overline{F}_{c} \overline{F}_{c}^{\top} T^{\top}=\overline{\phi}_{s} \overline{\phi}_{s}^{\top}</script><p>`</p>
+<p>`</p>
+<script type="math/tex; mode=display">
+T=\left(V_{s} D_{s}^{\frac{1}{2}} V_{s}^{\top}\right) U\left(V_{c} D_{c}^{-\frac{1}{2}} V_{c}^{\top}\right)</script><p>`</p>
+<p>`</p>
+<script type="math/tex; mode=display">
+\overline{F}_{d}+\operatorname{mean}\left(F_{s}\right)</script><p>`</p>
 <p>—</p>
 <h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><p><img src="\linearstyle\1558690935706.png" alt="1558690935706"></p>
 <!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
@@ -363,9 +361,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/torch/" rel="tag"># torch</a>
-          
             <a href="/tags/style-transfer/" rel="tag"># style transfer</a>
+          
+            <a href="/tags/torch/" rel="tag"># torch</a>
           
         </div>
       
