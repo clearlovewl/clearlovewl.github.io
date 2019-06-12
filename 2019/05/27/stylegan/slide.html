@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>Learning Linear Transformations for Fast Arbitrary Style Transfer</title>
+        <title>A Style-Based Generator Architecture for Generative Adversarial Networks</title>
 
         <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/css/reveal.min.css">
         
@@ -64,85 +64,48 @@
                          data-separator="^\n---\n"
                          data-separator-vertical="^\n--\n"
                          data-separator-notes="^Note:">
-                    <script type="text/template">Learning Linear Transformations for Fast Arbitrary Style Transfer
+                    <script type="text/template">A Style-Based Generator Architecture for Generative Adversarial Networks
 
 
 
 
 --
+
+
 
 
 # ABSTRACT
 
-2. recent arbitrary style transfer methods transfer second order statistics from  reference image onto content image via a multiplication between content image features and a transformation matrix ,which is computed from features with a pre-determined algorithm.
-3. These algorithms either require computationally expensive operations,or fail to model the feature covariance and produce artifacts in synthesized images .
-4. generalized from these methods ,in this work,we derive the form of transformation matrix theoretically and present an arbitrary style transfer approach that learns the transformation matrix with a feed-forward network.
+1. we 
 
 --
 
 
-# Style Transfer by Linear Transformation
+# INtroduction
+
+1.  we 
 
 
+# Style based generator
 
-
-
-![1558690351365](\linearstyle\1558690351365.png)
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
-
---
-
-
-
-`
-$$
-\begin{array}{c}{\mathcal{L}_{\text {style}}=\frac{1}{N C}\left\|\overline{F}_{d} \overline{F}_{d}^{\top}-\overline{\phi}_{s} \overline{\phi}_{s}^{\top}\right\|_{F}^{2}} \\ {\text {s.t.} \quad \overline{F}_{d}=T \overline{F}_{c}}\end{array}
-$$
-`
-
-
-`
-$$
-T \overline{F}_{c} \overline{F}_{c}^{\top} T^{\top}=\overline{\phi}_{s} \overline{\phi}_{s}^{\top}
-$$
-`
-
-`
-$$
-T=\left(V_{s} D_{s}^{\frac{1}{2}} V_{s}^{\top}\right) U\left(V_{c} D_{c}^{-\frac{1}{2}} V_{c}^{\top}\right)
-$$
-`
-
-`
-$$
-\overline{F}_{d}+\operatorname{mean}\left(F_{s}\right)
-$$
-`
+1. 
 
 
 
 
 
 
---
 
-
-
-# Results
-
-![1558690935706](\linearstyle\1558690935706.png)
-
+![1556107219634](\MEON\1556107219634.png)
 <!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 
 
 
---
+> [ppt]( https://clearlovewl.github.io/2019/04/24/MEON/slide.html)
 
+> [ppt]( http://localhost:4000/2019/04/24/MEON/slide.html)
 
-
-> [ppt]( https://clearlovewl.github.io/2019/05/24/linearstyle/slide.html)
-
-> [ppt]( http://localhost:4000/2019/05/24/linearstyle/slide.html)</script>
+</script>
                 </section>
             </div>
         </div>
