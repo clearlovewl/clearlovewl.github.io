@@ -99,8 +99,11 @@
 ## GDN as Activation Function
 
 
-
-$y_{i}(m, n)=\frac{x_{i}(m, n)}{\left(\beta_{i}+\sum_{j=1}^{S} \gamma_{i j} x_{j}(m, n)^{2}\right)^{\frac{1}{2}}}$
+`
+$$
+y_{i}(m, n)=\frac{x_{i}(m, n)}{\left(\beta_{i}+\sum_{j=1}^{S} \gamma_{i j} x_{j}(m, n)^{2}\right)^{\frac{1}{2}}}
+`
+$$
 
 
 
@@ -119,28 +122,38 @@ $y_{i}(m, n)=\frac{x_{i}(m, n)}{\left(\beta_{i}+\sum_{j=1}^{S} \gamma_{i j} x_{j
 
 --
 
+`
 $$
 \hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)=\frac{\exp \left(y_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}{\sum_{j=1}^{C} \exp \left(y_{j}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}
 $$
+`
 
+`
 $$
 \ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)=-\sum_{k=1}^{K} \sum_{i=1}^{C} p_{i}^{(k)} \log \hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)
 $$
+`
+
 
 --
 
+`
 $$
 \hat{q}^{(k)}=\hat{\mathbf{p}}^{(k) T} \mathbf{s}^{(k)}=\sum_{i=1}^{C} \hat{p}_{i}^{(k)} \cdot s_{i}^{(k)}
 $$
+`
 
+`
 $$
 \ell_{2}\left(\left\{\mathbf{X}^{(k)}\right] ; \mathbf{W}, \mathbf{w}_{2}\right)=\|\mathbf{q}-\hat{\mathbf{q}}\|_{1}=\sum_{k=1}^{K}\left|q^{(k)}-\hat{q}^{(k)}\right|
 $$
+`
 
+`
 $$
 \ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)=\ell_{1}+\lambda \ell_{2}
 $$
-
+`
 
 --
 
@@ -148,13 +161,21 @@ $$
 ## Training and Testing 
 
 1. At  the  pre-training  step,we minimize the loss function in Subtask I 
+
+
+`
 $$
 \left(\hat{\mathbf{W}}, \hat{\mathbf{w}}_{1}\right)=\arg \min \ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)
 $$
+`
+
 2. At  the  joint  optimization  step,we minimize the overall loss function 
+
+`
 $$
 \left(\mathbf{W}^{\star}, \mathbf{w}_{1}^{\star}, \mathbf{w}_{2}^{\star}\right)=\operatorname{argmin} \ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)
 $$
+`
 
 3. During testing ,given an image ,we extract 256 256 3 sub-images with a stride of U.
 

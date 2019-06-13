@@ -89,7 +89,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/MEON/1556086746816.png">
 <meta property="og:image" content="http://yoursite.com/MEON/1556107219634.png">
-<meta property="og:updated_time" content="2019-05-05T12:02:10.520Z">
+<meta property="og:updated_time" content="2019-06-13T10:48:58.361Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="end to end image quality assessment using deep neuarl networks">
 <meta name="twitter:description" content="MEON">
@@ -335,25 +335,43 @@
 </li>
 </ol>
 <p>—</p>
-<h2 id="GDN-as-Activation-Function"><a href="#GDN-as-Activation-Function" class="headerlink" title="GDN as Activation Function"></a>GDN as Activation Function</h2><p>$y_{i}(m, n)=\frac{x_{i}(m, n)}{\left(\beta_{i}+\sum_{j=1}^{S} \gamma_{i j} x_{j}(m, n)^{2}\right)^{\frac{1}{2}}}$</p>
-<p>—</p>
+<h2 id="GDN-as-Activation-Function"><a href="#GDN-as-Activation-Function" class="headerlink" title="GDN as Activation Function"></a>GDN as Activation Function</h2><p>`</p>
+<script type="math/tex; mode=display">
+y_{i}(m, n)=\frac{x_{i}(m, n)}{\left(\beta_{i}+\sum_{j=1}^{S} \gamma_{i j} x_{j}(m, n)^{2}\right)^{\frac{1}{2}}}
+`</script><p>—</p>
 <h2 id="Network-Architecture"><a href="#Network-Architecture" class="headerlink" title="Network Architecture"></a>Network Architecture</h2><p><img src="\MEON\1556086746816.png" alt="1556086746816"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   --></p>
 <p>—</p>
+<p>`</p>
 <script type="math/tex; mode=display">
-\hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)=\frac{\exp \left(y_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}{\sum_{j=1}^{C} \exp \left(y_{j}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}</script><script type="math/tex; mode=display">
-\ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)=-\sum_{k=1}^{K} \sum_{i=1}^{C} p_{i}^{(k)} \log \hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)</script><p>—</p>
+\hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)=\frac{\exp \left(y_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}{\sum_{j=1}^{C} \exp \left(y_{j}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)\right)}</script><p>`</p>
+<p>`</p>
 <script type="math/tex; mode=display">
-\hat{q}^{(k)}=\hat{\mathbf{p}}^{(k) T} \mathbf{s}^{(k)}=\sum_{i=1}^{C} \hat{p}_{i}^{(k)} \cdot s_{i}^{(k)}</script><script type="math/tex; mode=display">
-\ell_{2}\left(\left\{\mathbf{X}^{(k)}\right] ; \mathbf{W}, \mathbf{w}_{2}\right)=\|\mathbf{q}-\hat{\mathbf{q}}\|_{1}=\sum_{k=1}^{K}\left|q^{(k)}-\hat{q}^{(k)}\right|</script><script type="math/tex; mode=display">
-\ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)=\ell_{1}+\lambda \ell_{2}</script><p>—</p>
+\ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)=-\sum_{k=1}^{K} \sum_{i=1}^{C} p_{i}^{(k)} \log \hat{p}_{i}^{(k)}\left(\mathbf{X}^{(k)} ; \mathbf{W}, \mathbf{w}_{1}\right)</script><p>`</p>
+<p>—</p>
+<p>`</p>
+<script type="math/tex; mode=display">
+\hat{q}^{(k)}=\hat{\mathbf{p}}^{(k) T} \mathbf{s}^{(k)}=\sum_{i=1}^{C} \hat{p}_{i}^{(k)} \cdot s_{i}^{(k)}</script><p>`</p>
+<p>`</p>
+<script type="math/tex; mode=display">
+\ell_{2}\left(\left\{\mathbf{X}^{(k)}\right] ; \mathbf{W}, \mathbf{w}_{2}\right)=\|\mathbf{q}-\hat{\mathbf{q}}\|_{1}=\sum_{k=1}^{K}\left|q^{(k)}-\hat{q}^{(k)}\right|</script><p>`</p>
+<p>`</p>
+<script type="math/tex; mode=display">
+\ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)=\ell_{1}+\lambda \ell_{2}</script><p>`</p>
+<p>—</p>
 <h2 id="Training-and-Testing"><a href="#Training-and-Testing" class="headerlink" title="Training and Testing"></a>Training and Testing</h2><ol>
-<li>At  the  pre-training  step,we minimize the loss function in Subtask I <script type="math/tex; mode=display">
-\left(\hat{\mathbf{W}}, \hat{\mathbf{w}}_{1}\right)=\arg \min \ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)</script></li>
-<li><p>At  the  joint  optimization  step,we minimize the overall loss function </p>
+<li>At  the  pre-training  step,we minimize the loss function in Subtask I </li>
+</ol>
+<p>`</p>
 <script type="math/tex; mode=display">
-\left(\mathbf{W}^{\star}, \mathbf{w}_{1}^{\star}, \mathbf{w}_{2}^{\star}\right)=\operatorname{argmin} \ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)</script></li>
-<li><p>During testing ,given an image ,we extract 256 256 3 sub-images with a stride of U.</p>
-</li>
+\left(\hat{\mathbf{W}}, \hat{\mathbf{w}}_{1}\right)=\arg \min \ell_{1}\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}\right)</script><p>`</p>
+<ol>
+<li>At  the  joint  optimization  step,we minimize the overall loss function </li>
+</ol>
+<p>`</p>
+<script type="math/tex; mode=display">
+\left(\mathbf{W}^{\star}, \mathbf{w}_{1}^{\star}, \mathbf{w}_{2}^{\star}\right)=\operatorname{argmin} \ell\left(\left\{\mathbf{X}^{(k)}\right\} ; \mathbf{W}, \mathbf{w}_{1}, \mathbf{w}_{2}\right)</script><p>`</p>
+<ol>
+<li>During testing ,given an image ,we extract 256 256 3 sub-images with a stride of U.</li>
 </ol>
 <p>—</p>
 <h1 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h1><p><img src="\MEON\1556107219634.png" alt="1556107219634"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   --></p>
