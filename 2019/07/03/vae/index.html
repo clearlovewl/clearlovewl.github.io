@@ -89,7 +89,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/vae/1562207545085.png">
 <meta property="og:image" content="http://yoursite.com/vae/1562209134427.png">
-<meta property="og:updated_time" content="2019-07-04T03:55:47.294Z">
+<meta property="og:updated_time" content="2019-07-04T05:08:12.973Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders">
 <meta name="twitter:description" content="Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders">
@@ -321,39 +321,29 @@
 <h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><ol>
 <li>generalized zero shot learning rely on cross-modal mapping between the image feature space and the class embedding space </li>
 <li>labeled images are expensive, one is to augment the dataset.</li>
-<li>in this work , we take feature generation one step further and propose a model where a shared latent space of image features ….</li>
+<li>in this work , we take feature generation one step further and propose a model where a shared latent space of image features and class  embeddings  is  learned  by  modality-specific  aligned variational autoencoders.</li>
 </ol>
 <p>—</p>
-<h1 id="CADA-VAE-Model"><a href="#CADA-VAE-Model" class="headerlink" title="CADA VAE Model"></a>CADA VAE Model</h1><p>​    GZSL is a challenging task.The task definition of GZSL is as follows :</p>
-<p>let<br>`</p>
-<script type="math/tex; mode=display">
-S=\{(x, y, c(y)) | x \in X, y \in Y^{S}, c(y) \in C \}</script><p>`<br>be a set of training examples ,consisting of image features x, e. g. extracted by a CNN, class labels y available during training and class-embeddings c(y).</p>
-<p>In addition, an auxiliary set<br>`</p>
-<script type="math/tex; mode=display">
-U=\left\{(u, c(u)) | u \in Y^{u}, c(u) \in C\right\}</script><p>`<br>is used, where u denote unseen classes from a set  $Y^{u}$ , which is disjoint from $Y^{S}$ . </p>
+<h1 id="CADA-VAE-Model"><a href="#CADA-VAE-Model" class="headerlink" title="CADA VAE Model"></a>CADA VAE Model</h1><ol>
+<li>GZSL is a challenging task.The task definition of GZSL is as follows :let$$$S=\{(x, y, c(y)) | x \in X, y \in Y^{S}, c(y) \in C \}$$$</li>
+<li>be a set of training examples ,consisting of image features x, e. g. extracted by a CNN, class labels y available during training and class-embeddings c(y).</li>
+<li>In addition, an auxiliary set$$$U=\left\{(u, c(u)) | u \in Y^{u}, c(u) \in C\right\}$$$is used, where u denote unseen classes from a set  $Y^{u}$ , which is disjoint from $Y^{S}$ . </li>
+<li>Here, $$$C(U)=\left\{c\left(u_{1}\right), \ldots, c\left(u_{L}\right)\right\}$$$is the set of class-embeddings of unseen classes. </li>
+<li>In the legacy challenge of ZSL, the task is to learn a classifier $$$f_{Z S L} : X \rightarrow Y^{U}$$$</li>
+<li>GZSL aim to learn a classifier $$$f_{G Z S L} : X \rightarrow Y^{U} \cup Y^{S}$$$</li>
+</ol>
 <p>—</p>
-<p>Here,<br>`</p>
-<script type="math/tex; mode=display">
-C(U)=\left\{c\left(u_{1}\right), \ldots, c\left(u_{L}\right)\right\}</script><p><code>is the set of class-embeddings of unseen classes. In the legacy challenge of ZSL, the task is to learn a classifier</code></p>
-<script type="math/tex; mode=display">
-f_{Z S L} : X \rightarrow Y^{U}</script><p><code>GZSL aim to learn a classifier</code></p>
-<script type="math/tex; mode=display">
-f_{G Z S L} : X \rightarrow Y^{U} \cup Y^{S}</script><p>`</p>
-<p>—</p>
-<p>Variational Auto encoder**. Variational inference aims at finding the true conditional probability distrubution over the latent variables.<br>`</p>
-<script type="math/tex; mode=display">
-\mathcal{L}=\mathbb{E}_{q_{\phi}(z | x)}\left[\log p_{\theta}(x | z)\right]-D_{K L}\left(q_{\phi}(z | x) \| p_{\theta}(z)\right)</script><p>`<br><strong>Cross and Distribution Aligned VAE</strong></p>
-<p>The goal of our model is to learn representations within a common space for a combination of M data modalities. our model includes M=2 encoders:<br>`</p>
-<script type="math/tex; mode=display">
-\begin{aligned} \mathcal{L}_{V A E}=& \sum_{i}^{M} \mathbb{E}_{q_{\phi}(z | x)}\left[\log p_{\theta}\left(x^{(i)} | z\right)\right] \\ &-\beta D_{K L}\left(q_{\phi}\left(z | x^{(i)}\right) \| p_{\theta}(z)\right) \end{aligned}</script><p><code>
-</code></p>
-<script type="math/tex; mode=display">
-x^{(1)} \in X \text { and } x^{(2)} \in C\left(Y^{S}\right)</script><p>`</p>
+<ol>
+<li><strong>Variational Auto encoder.</strong>  $$$\mathcal{L}=\mathbb{E}_{q_{\phi}(z | x)}\left[\log p_{\theta}(x | z)\right]-D_{K L}\left(q_{\phi}(z | x) | p_{\theta}(z)\right)$$$ Variational inference aims at finding the true conditional probability distrubution over the latent variables.</li>
+<li><strong>Cross and Distribution Aligned VAE</strong>$$$\begin{aligned} \mathcal{L}_{V A E}=&amp; \sum_{i}^{M} \mathbb{E}_{q_{\phi}(z | x)}\left[\log p_{\theta}\left(x^{(i)} | z\right)\right] \\ &amp;-\beta D_{K L}\left(q_{\phi}\left(z | x^{(i)}\right) | p_{\theta}(z)\right) \end{aligned}$$$The goal of our model is to learn representations within a common space for a combination of M data modalities. our model includes M=2 encoders:$$$x^{(1)} \in X \text { and } x^{(2)} \in C\left(Y^{S}\right)$$$</li>
+</ol>
 <p>—</p>
 <p><img src="\vae\1562207545085.png" alt="1562207545085"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   --></p>
-<p><strong>Cross-Alignment (CA) Loss</strong></p>
-<p><strong>Distribution-Alignment (DA) Loss</strong></p>
-<p><strong>Cross- and Distribution Alignment (CADA-VAE) Loss</strong></p>
+<ol>
+<li>Cross-Alignment (CA) Loss</li>
+<li>Distribution-Alignment (DA) Loss</li>
+<li>Cross- and Distribution Alignment (CADA-VAE) Loss</li>
+</ol>
 <p>`</p>
 <script type="math/tex; mode=display">
 \mathcal{L}_{C A D A-V A E}=\mathcal{L}_{V A E}+\gamma \mathcal{L}_{C A}+\delta \mathcal{L}_{D A}</script><p>`</p>
