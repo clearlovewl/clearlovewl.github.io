@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="pytorch,分割,">
+  <meta name="keywords" content="zero shot,vae,">
 
 
 
@@ -79,27 +79,21 @@
 
 
 
-<meta name="description" content="分割FCN">
-<meta name="keywords" content="pytorch,分割">
+<meta name="description" content="Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders">
+<meta name="keywords" content="zero shot,vae">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Fully Convolutional Networks for Semantic Segmentation">
-<meta property="og:url" content="http://yoursite.com/2018/10/22/fcn/index.html">
+<meta property="og:title" content="Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders">
+<meta property="og:url" content="http://yoursite.com/2019/07/03/vae/index.html">
 <meta property="og:site_name" content="wl-uestc">
-<meta property="og:description" content="分割FCN">
+<meta property="og:description" content="Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/fcn/fcn.png">
-<meta property="og:image" content="http://yoursite.com/fcn/fcn.png">
-<meta property="og:image" content="http://yoursite.com/fcn/fcnx.png">
-<meta property="og:image" content="http://yoursite.com/fcn/fcn2.png">
-<meta property="og:image" content="http://yoursite.com/fcn/vgg.png">
-<meta property="og:image" content="http://yoursite.com/fcn/fcn8.png">
-<meta property="og:image" content="http://yoursite.com/fcn/tconv.png">
-<meta property="og:image" content="http://yoursite.com/fcn/xiaoguo.png">
-<meta property="og:updated_time" content="2018-10-24T12:51:37.543Z">
+<meta property="og:image" content="http://yoursite.com/vae/1562207545085.png">
+<meta property="og:image" content="http://yoursite.com/vae/1562209134427.png">
+<meta property="og:updated_time" content="2019-07-04T03:55:47.294Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fully Convolutional Networks for Semantic Segmentation">
-<meta name="twitter:description" content="分割FCN">
-<meta name="twitter:image" content="http://yoursite.com/fcn/fcn.png">
+<meta name="twitter:title" content="Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders">
+<meta name="twitter:description" content="Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders">
+<meta name="twitter:image" content="http://yoursite.com/vae/1562207545085.png">
 
 
 
@@ -129,13 +123,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/10/22/fcn/">
+  <link rel="canonical" href="http://yoursite.com/2019/07/03/vae/">
 
 
 
 
 
-  <title>Fully Convolutional Networks for Semantic Segmentation | wl-uestc</title>
+  <title>Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders | wl-uestc</title>
   
 
 
@@ -252,7 +246,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/22/fcn/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/03/vae/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wang lei">
@@ -269,7 +263,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Fully Convolutional Networks for Semantic Segmentation</h1>
+          <h1 class="post-title" itemprop="name headline">Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders</h1>
         
 
         <div class="post-meta">
@@ -281,8 +275,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-22T00:00:00+08:00">
-                2018-10-22
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-07-03T00:00:00+08:00">
+                2019-07-03
               </time>
             
 
@@ -306,7 +300,7 @@
 
           
               <div class="post-description">
-                  分割FCN
+                  Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders
               </div>
           
 
@@ -323,25 +317,53 @@
       
 
       
-        <blockquote>
-<p><a href="https://arxiv.org/abs/1411.4038" target="_blank" rel="noopener">原文</a><br><a href="https://github.com/clearlovewl/FCN-pytorch-easiest" target="_blank" rel="noopener">代码</a><br><a href="https://clearlovewl.github.io/2018/10/22/fcn/slide.html" target="_blank" rel="noopener">ppt</a></p>
+        <p>—</p>
+<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><ol>
+<li>generalized zero shot learning rely on cross-modal mapping between the image feature space and the class embedding space </li>
+<li>labeled images are expensive, one is to augment the dataset.</li>
+<li>in this work , we take feature generation one step further and propose a model where a shared latent space of image features ….</li>
+</ol>
+<p>—</p>
+<h1 id="CADA-VAE-Model"><a href="#CADA-VAE-Model" class="headerlink" title="CADA VAE Model"></a>CADA VAE Model</h1><p>​    GZSL is a challenging task.The task definition of GZSL is as follows :</p>
+<p>let<br>`</p>
+<script type="math/tex; mode=display">
+S=\{(x, y, c(y)) | x \in X, y \in Y^{S}, c(y) \in C \}</script><p>`<br>be a set of training examples ,consisting of image features x, e. g. extracted by a CNN, class labels y available during training and class-embeddings c(y).</p>
+<p>In addition, an auxiliary set<br>`</p>
+<script type="math/tex; mode=display">
+U=\left\{(u, c(u)) | u \in Y^{u}, c(u) \in C\right\}</script><p>`<br>is used, where u denote unseen classes from a set  $Y^{u}$ , which is disjoint from $Y^{S}$ . </p>
+<p>—</p>
+<p>Here,<br>`</p>
+<script type="math/tex; mode=display">
+C(U)=\left\{c\left(u_{1}\right), \ldots, c\left(u_{L}\right)\right\}</script><p><code>is the set of class-embeddings of unseen classes. In the legacy challenge of ZSL, the task is to learn a classifier</code></p>
+<script type="math/tex; mode=display">
+f_{Z S L} : X \rightarrow Y^{U}</script><p><code>GZSL aim to learn a classifier</code></p>
+<script type="math/tex; mode=display">
+f_{G Z S L} : X \rightarrow Y^{U} \cup Y^{S}</script><p>`</p>
+<p>—</p>
+<p>Variational Auto encoder**. Variational inference aims at finding the true conditional probability distrubution over the latent variables.<br>`</p>
+<script type="math/tex; mode=display">
+\mathcal{L}=\mathbb{E}_{q_{\phi}(z | x)}\left[\log p_{\theta}(x | z)\right]-D_{K L}\left(q_{\phi}(z | x) \| p_{\theta}(z)\right)</script><p>`<br><strong>Cross and Distribution Aligned VAE</strong></p>
+<p>The goal of our model is to learn representations within a common space for a combination of M data modalities. our model includes M=2 encoders:<br>`</p>
+<script type="math/tex; mode=display">
+\begin{aligned} \mathcal{L}_{V A E}=& \sum_{i}^{M} \mathbb{E}_{q_{\phi}(z | x)}\left[\log p_{\theta}\left(x^{(i)} | z\right)\right] \\ &-\beta D_{K L}\left(q_{\phi}\left(z | x^{(i)}\right) \| p_{\theta}(z)\right) \end{aligned}</script><p><code>
+</code></p>
+<script type="math/tex; mode=display">
+x^{(1)} \in X \text { and } x^{(2)} \in C\left(Y^{S}\right)</script><p>`</p>
+<p>—</p>
+<p><img src="\vae\1562207545085.png" alt="1562207545085"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   --></p>
+<p><strong>Cross-Alignment (CA) Loss</strong></p>
+<p><strong>Distribution-Alignment (DA) Loss</strong></p>
+<p><strong>Cross- and Distribution Alignment (CADA-VAE) Loss</strong></p>
+<p>`</p>
+<script type="math/tex; mode=display">
+\mathcal{L}_{C A D A-V A E}=\mathcal{L}_{V A E}+\gamma \mathcal{L}_{C A}+\delta \mathcal{L}_{D A}</script><p>`</p>
+<p>—</p>
+<h1 id="Comparing-CADA-VAE-on-Benchmark-Datasets"><a href="#Comparing-CADA-VAE-on-Benchmark-Datasets" class="headerlink" title="Comparing CADA-VAE on Benchmark Datasets"></a>Comparing CADA-VAE on Benchmark Datasets</h1><p><img src="\vae\1562209134427.png" alt="1562209134427"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   --></p>
+<p>—</p>
+<blockquote>
+<p><a href="https://clearlovewl.github.io/2019/07/03/vae/slide.html" target="_blank" rel="noopener">ppt</a></p>
+<p><a href="http://localhost:4000/2019/07/03/vae/slide.html" target="_blank" rel="noopener">ppt</a></p>
 </blockquote>
-<p><img src="/fcn/fcn.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
-<hr>
-<h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><p>Convolutional networks are powerful visual models that yield  hierarchies  of  features.FCN show  that  convolutional networks by themselves, trained end-to-end, pixels-to-pixels,  exceed  the  state-of-the-art  in  semantic  segmentation.<br><img src="/fcn/fcn.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
-<p>—</p>
-<h2 id="Adapting-classifiers-for-dense-prediction"><a href="#Adapting-classifiers-for-dense-prediction" class="headerlink" title="Adapting classifiers for dense prediction"></a>Adapting classifiers for dense prediction</h2><p>typical recognition nets,  ostensibly  take fixed-sized inputs and produce nonspatial outputs. the fully connected layers of these nets have fixed dimensions and throw away spatial coordinates.  however, these fully connected layers can also be viewed as convolutions with kernels  that  cover  their  entire  input  regions.   doing  so  casts them  into  fully  convolutional  networks  that  take  input  of any size and output classification maps.</p>
-<p>—<br><img src="/fcn/fcnx.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<p>—</p>
-<h2 id="Segmentation-Architecture"><a href="#Segmentation-Architecture" class="headerlink" title="Segmentation Architecture"></a>Segmentation Architecture</h2><p><img src="/fcn/fcn2.png" alt="fcn2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
-<p>—<br>we address this by adding links that combine the final prediction layer with lower layers with finer strides.  this turns a line topology into a dag, with edges that skip ahead from lower layers to higher ones .   as they see fewer pixels, the finer scale predictions should need fewerlayers, so it makes sense to make them from shallower netoutputs.   combining fine layers and coarse layers lets the model make local predictions that respect global structure.</p>
-<p>—<br><img src="/fcn/vgg.png" alt="vgg"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<p>—<br><img src="/fcn/fcn8.png" alt="fcn2"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="800px"   --></p>
-<p>—</p>
-<h2 id="Transpose-Convolution"><a href="#Transpose-Convolution" class="headerlink" title="Transpose Convolution"></a>Transpose Convolution</h2><p><img src="/fcn/tconv.png" alt="tconv"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="600px"   --></p>
-<hr>
-<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>table  gives the performance of ourfcn-8s on the test sets of pascal voc 2011 and 2012,and compares it to the previous state-of-the-art, sds [16],and the well-known r-cnn [12].  we achieve the best results on mean iu by a relative margin of 20%.  inference time is reduced114×(convnet only, ignoring proposals and refinement) or 286×(overall)</p>
-<p><img src="/fcn/xiaoguo.png" alt="xiaoguo"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="200px"   --></p>
 
       
     </div>
@@ -359,9 +381,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/pytorch/" rel="tag"># pytorch</a>
+            <a href="/tags/zero-shot/" rel="tag"># zero shot</a>
           
-            <a href="/tags/分割/" rel="tag"># 分割</a>
+            <a href="/tags/vae/" rel="tag"># vae</a>
           
         </div>
       
@@ -374,8 +396,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/08/pytorch-data/" rel="next" title="pytorch加载数据">
-                <i class="fa fa-chevron-left"></i> pytorch加载数据
+              <a href="/2019/05/27/stylegan/" rel="next" title="A Style-Based Generator Architecture for Generative Adversarial Networks">
+                <i class="fa fa-chevron-left"></i> A Style-Based Generator Architecture for Generative Adversarial Networks
               </a>
             
           </div>
@@ -383,10 +405,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/20/midinet/" rel="prev" title="A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION">
-                A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -509,7 +527,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABSTRCT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Adapting-classifiers-for-dense-prediction"><span class="nav-number">2.</span> <span class="nav-text">Adapting classifiers for dense prediction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Segmentation-Architecture"><span class="nav-number">3.</span> <span class="nav-text">Segmentation Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transpose-Convolution"><span class="nav-number">4.</span> <span class="nav-text">Transpose Convolution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">5.</span> <span class="nav-text">Results</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ABSTRACT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRACT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CADA-VAE-Model"><span class="nav-number">2.</span> <span class="nav-text">CADA VAE Model</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Comparing-CADA-VAE-on-Benchmark-Datasets"><span class="nav-number">3.</span> <span class="nav-text">Comparing CADA-VAE on Benchmark Datasets</span></a></li></ol></div>
             
 
           </div>
