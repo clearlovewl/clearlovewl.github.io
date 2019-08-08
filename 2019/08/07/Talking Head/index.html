@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="pytorch,GAN,">
+  <meta name="keywords" content="zero shot,face swap,">
 
 
 
@@ -79,26 +79,24 @@
 
 
 
-<meta name="description" content="MIDINET">
-<meta name="keywords" content="pytorch,GAN">
+<meta name="description" content="Few-Shot Adversarial Learning of Realistic Neural Talking Head Models">
+<meta name="keywords" content="zero shot,face swap">
 <meta property="og:type" content="article">
-<meta property="og:title" content="A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION">
-<meta property="og:url" content="http://yoursite.com/2018/11/20/midinet/index.html">
+<meta property="og:title" content="Few-Shot Adversarial Learning of Realistic Neural Talking Head Models">
+<meta property="og:url" content="http://yoursite.com/2019/08/07/Talking Head/index.html">
 <meta property="og:site_name" content="wl-uestc">
-<meta property="og:description" content="MIDINET">
+<meta property="og:description" content="Few-Shot Adversarial Learning of Realistic Neural Talking Head Models">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/midinet/midinet.png">
-<meta property="og:image" content="http://yoursite.com/midinet/midinet.png">
-<meta property="og:image" content="http://yoursite.com/midinet/midinet1.png">
-<meta property="og:image" content="http://yoursite.com/midinet/midinet2.png">
-<meta property="og:image" content="http://yoursite.com/midinet/data.png">
-<meta property="og:image" content="http://yoursite.com/midinet/1d.png">
-<meta property="og:image" content="http://yoursite.com/midinet/result.png">
-<meta property="og:updated_time" content="2018-11-20T10:20:38.281Z">
+<meta property="og:image" content="http://yoursite.com/Talking%20Head/1565166694515.png">
+<meta property="og:image" content="http://yoursite.com/Talking%20Head/1565166768438.png">
+<meta property="og:image" content="http://yoursite.com/Talking%20Head/1565166825921.png">
+<meta property="og:image" content="http://yoursite.com/Talking%20Head/1565166874552.png">
+<meta property="og:image" content="http://yoursite.com/Talking%20Head/1565166929345.png">
+<meta property="og:updated_time" content="2019-08-08T05:03:41.369Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION">
-<meta name="twitter:description" content="MIDINET">
-<meta name="twitter:image" content="http://yoursite.com/midinet/midinet.png">
+<meta name="twitter:title" content="Few-Shot Adversarial Learning of Realistic Neural Talking Head Models">
+<meta name="twitter:description" content="Few-Shot Adversarial Learning of Realistic Neural Talking Head Models">
+<meta name="twitter:image" content="http://yoursite.com/Talking%20Head/1565166694515.png">
 
 
 
@@ -128,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/20/midinet/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/07/Talking Head/">
 
 
 
 
 
-  <title>A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION | wl-uestc</title>
+  <title>Few-Shot Adversarial Learning of Realistic Neural Talking Head Models | wl-uestc</title>
   
 
 
@@ -251,7 +249,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/20/midinet/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/07/Talking Head/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="wang lei">
@@ -268,7 +266,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">A CONVOLUTIONAL GENERATIVE ADVERSARIALNETWORK FOR SYMBOLIC-DOMAIN MUSIC GENERATION</h1>
+          <h1 class="post-title" itemprop="name headline">Few-Shot Adversarial Learning of Realistic Neural Talking Head Models</h1>
         
 
         <div class="post-meta">
@@ -280,8 +278,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-20T00:00:00+08:00">
-                2018-11-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-07T00:00:00+08:00">
+                2019-08-07
               </time>
             
 
@@ -305,7 +303,7 @@
 
           
               <div class="post-description">
-                  MIDINET
+                  Few-Shot Adversarial Learning of Realistic Neural Talking Head Models
               </div>
           
 
@@ -322,34 +320,71 @@
       
 
       
-        <blockquote>
-<p><a href="https://clearlovewl.github.io/2018/11/20/midinet/slide.html" target="_blank" rel="noopener">ppt</a></p>
-</blockquote>
-<p><img src="/midinet/midinet.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="500px"   --></p>
+        <p>—</p>
+<p><img src="\Talking Head\1565166694515.png" alt="1565166694515"></p>
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+<p>—</p>
+<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><ol>
+<li><p>Several  recent  works  have  shown  how  highly  realistic human head images can be obtained by training convolutional neural networks to generate them</p>
+</li>
+<li><p>In order to create a personalized talking head model, these works require</p>
+<p>training  on  a  large  dataset  of  images  of  a  single  person</p>
+</li>
+<li><p>However, in many practical scenarios, such personalized talking head models need to be learned from a few image views of a person, potentially even a single image</p>
+</li>
+<li><p>Here,we present a system with such few-shot capability. It performs lengthy meta-learning on a large dataset of videos, and after that is able to frame few-and one-shot learning of neural talking head models of previously unseen people as adversarial training problems with high capacity generators and discriminators</p>
+</li>
+</ol>
+<p>—</p>
+<h1 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h1><p>—</p>
+<ol>
+<li><script type="math/tex; mode=display">\hat{\mathbf{e}}_{i}=\frac{1}{K} \sum_{k=1}^{K} E\left(\mathbf{x}_{i}\left(s_{k}\right),\mathbf{y}_{i}\left(s_{k}\right) ; \phi\right)$$$ $$$\hat{\mathbf{x}}_{i}(t)=G\left(\mathbf{y}_{i}(t), \hat{\mathbf{e}}_{i} ; \psi, \mathbf{P}\right)</script></li>
+<li><script type="math/tex; mode=display">\begin{array}{c}{\mathcal{L}\left(\phi, \psi, \mathbf{P}, \theta, \mathbf{W}, \mathbf{w}_{0}, b\right)=\mathcal{L}_{\mathrm{CNT}}(\phi, \psi, \mathbf{P})+} \\ {\mathcal{L}_{\mathrm{ADV}}\left(\phi, \psi, \mathbf{P}, \theta, \mathbf{W}, \mathbf{w}_{0}, b\right)+\mathcal{L}_{\mathrm{MCH}}(\phi, \mathbf{W})}\end{array}</script></li>
+<li><script type="math/tex; mode=display">\begin{array}{r}{\mathcal{L}_{\mathrm{ADV}}\left(\phi, \psi, \mathbf{P}, \theta, \mathbf{W}, \mathbf{w}_{0}, b\right)=} \\ {\quad-D\left(\hat{\mathbf{x}}_{i}(t), \mathbf{y}_{i}(t), i ; \theta, \mathbf{W}, \mathbf{w}_{0}, b\right)+\mathcal{L}_{\mathrm{FM}}}\end{array}</script></li>
+</ol>
+<p>—</p>
+<ol>
+<li><script type="math/tex; mode=display">\begin{array}{c}{D\left(\hat{\mathbf{x}}_{i}(t), \mathbf{y}_{i}(t), i ; \theta, \mathbf{W}, \mathbf{w}_{0}, b\right)=} \\ {V\left(\hat{\mathbf{x}}_{i}(t), \mathbf{y}_{i}(t) ; \theta\right)^{T}\left(\mathbf{W}_{i}+\mathbf{w}_{0}\right)+b}\end{array}</script></li>
+<li><script type="math/tex; mode=display">\begin{array}{c}{\mathcal{L}_{\mathrm{DSC}}\left(\phi, \psi, \mathbf{P}, \theta, \mathbf{W}, \mathbf{w}_{0}, b\right)=} \\ {\max \left(0,1+D\left(\hat{\mathbf{x}}_{i}(t), \mathbf{y}_{i}(t), i ; \phi, \psi, \theta, \mathbf{W}, \mathbf{w}_{0}, b\right)\right)+} \\ {\max \left(0,1-D\left(\mathbf{x}_{i}(t), \mathbf{y}_{i}(t), i ; \theta, \mathbf{W}, \mathbf{w}_{0}, b\right)\right)}\end{array}</script></li>
+</ol>
+<p>—</p>
 <hr>
-<h2 id="ABSTRCT"><a href="#ABSTRCT" class="headerlink" title="ABSTRCT"></a>ABSTRCT</h2><ol>
-<li>most exisiting neural network models for music generation use recurrent neural networks</li>
-<li>using CNNs and GAN for generating melody</li>
+<p><img src="\Talking Head\1565166768438.png" alt="1565166768438"></p>
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+<hr>
+<p>—</p>
+<h1 id="Few-shotlearningbyﬁne-tuning"><a href="#Few-shotlearningbyﬁne-tuning" class="headerlink" title="Few-shotlearningbyﬁne-tuning"></a>Few-shotlearningbyﬁne-tuning</h1><p>—</p>
+<ol>
+<li><script type="math/tex; mode=display">\hat{\mathbf{e}}_{\mathrm{NEW}}=\frac{1}{T} \sum_{t=1}^{T} E(\mathbf{x}(t), \mathbf{y}(t) ; \phi)</script></li>
+<li><script type="math/tex; mode=display">\psi^{\prime}=\mathbf{P} \hat{\mathbf{e}}_{\mathrm{NEW}}</script></li>
+<li><script type="math/tex; mode=display">\begin{array}{c}{D^{\prime}\left(\hat{\mathbf{x}}(t), \mathbf{y}(t) ; \theta, \mathbf{w}^{\prime}, b\right)=} \\ {V(\hat{\mathbf{x}}(t), \mathbf{y}(t) ; \theta)^{T} \mathbf{w}^{\prime}+b}\end{array}</script></li>
+<li><script type="math/tex; mode=display">\mathbf{w}^{\prime} \text { to the sum of } \mathbf{w}_{0} \text { and } \hat{\mathbf{e}}_{\mathrm{NEW}}</script></li>
+<li><script type="math/tex; mode=display">\psi^{\prime}=\mathbf{P} \hat{\mathbf{e}}_{\mathrm{NEW}}</script></li>
 </ol>
-<p><img src="/midinet/midinet.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="500px"   --></p>
 <p>—</p>
-<h2 id="Methods"><a href="#Methods" class="headerlink" title="Methods"></a>Methods</h2><ol>
-<li>Symbolic Representation for Convolution: h -by- w real-valued matrix X</li>
-<li>Generator CNN and Discriminator CNN</li>
-<li>Conditioner CNN</li>
+<ol>
+<li><script type="math/tex; mode=display">\begin{aligned} \mathcal{L}^{\prime}\left(\psi, \psi^{\prime}, \theta, \mathbf{w}^{\prime}, b\right) &=\\ \mathcal{L}_{\mathrm{CNT}}^{\prime}\left(\psi, \psi^{\prime}\right) &+\mathcal{L}_{\mathrm{ADV}}^{\prime}\left(\psi, \psi^{\prime}, \theta, \mathbf{w}^{\prime}, b\right) \end{aligned}</script></li>
+<li><script type="math/tex; mode=display">\begin{array}{c}{\mathcal{L}_{\mathrm{DSC}}^{\prime}\left(\psi, \psi^{\prime}, \theta, \mathbf{w}^{\prime}, b\right)=} \\ {\max \left(0,1+D\left(\hat{\mathbf{x}}(t), \mathbf{y}(t) ; \psi, \psi^{\prime}, \theta, \mathbf{w}^{\prime}, b\right)\right)+} \\ {\max \left(0,1-D\left(\mathbf{x}(t), \mathbf{y}(t) ; \theta, \mathbf{w}^{\prime}, b\right)\right)}\end{array}</script></li>
 </ol>
-<p>—<br><img src="/midinet/midinet1.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
-<p>—<br><img src="/midinet/midinet2.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
 <p>—</p>
-<h2 id="Datasets"><a href="#Datasets" class="headerlink" title="Datasets"></a>Datasets</h2><p><img src="/midinet/data.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
+<h1 id="Comparing-CADA-VAE-on-Benchmark-Datasets"><a href="#Comparing-CADA-VAE-on-Benchmark-Datasets" class="headerlink" title="Comparing CADA-VAE on Benchmark Datasets"></a>Comparing CADA-VAE on Benchmark Datasets</h1><p>—</p>
+<ol>
+<li>We then scale up the available dataand train our method on a larger VoxCeleb2 dataset.  Here,we  train  two  variants  of  our  method.   FF  (feed-forward)variant  is  trained  for  150  epochs  without  the  embeddingmatching  lossLMCHand,  therefore,  we  only  use  it  with-out fine-tuning (by simply predicting adaptive parametersψ′via the projection of the embeddingˆeNEW). The FT vari-ant is trained for half as much (75 epochs) but withLMCH,which allows fine-tuning</li>
+</ol>
 <p>—</p>
-<p><img src="/midinet/1d.png" alt="fcn"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
+<p><img src="\Talking Head\1565166825921.png" alt="1565166825921"></p>
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 <p>—</p>
-<p>we  crawled  a  collection  of  1,022 midi tabs of pop music from theorytab which providesexactly two channels per tab, one for melody and the otherfor the underlying chord progression.with this dataset, wecan implement at least two versions of midinets: one thatlearns from only the melody channel for fair comparison with  melodyrnn,  which  does  not  use  chords,  andthe other that additionally uses chords to condition melody generation, to test the capacity of midinet.</p>
+<p><img src="\Talking Head\1565166874552.png" alt="1565166874552"></p>
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 <p>—</p>
-<h2 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h2><p>result of a user study comparing melodyrnnand  midinet  models,  for  people  (top  row)  with  musicalbackgrounds and (bottom) without musical backgrounds.the middle bars indicate the mean values. please note thatmidinet model 2 takes the chord condition as additional information.</p>
+<p><img src="\Talking Head\1565166929345.png" alt="1565166929345"></p>
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 <p>—</p>
-<p><img src="/midinet/result.png" alt="xiaoguo"><br><!-- .element style="border: 0; background: None; box-shadow: None" height="700px"   --></p>
+<blockquote>
+<p><a href="https://clearlovewl.github.io/2019/08/07/Talking Head/slide.html" target="_blank" rel="noopener">ppt</a></p>
+<p><a href="http://localhost:4000/2019/08/07/Talking Head/slide.html" target="_blank" rel="noopener">ppt</a></p>
+</blockquote>
 
       
     </div>
@@ -367,9 +402,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/pytorch/" rel="tag"># pytorch</a>
+            <a href="/tags/zero-shot/" rel="tag"># zero shot</a>
           
-            <a href="/tags/GAN/" rel="tag"># GAN</a>
+            <a href="/tags/face-swap/" rel="tag"># face swap</a>
           
         </div>
       
@@ -382,8 +417,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/22/fcn/" rel="next" title="Fully Convolutional Networks for Semantic Segmentation">
-                <i class="fa fa-chevron-left"></i> Fully Convolutional Networks for Semantic Segmentation
+              <a href="/2019/07/03/vae/" rel="next" title="Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders">
+                <i class="fa fa-chevron-left"></i> Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders
               </a>
             
           </div>
@@ -391,10 +426,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/26/Artisticstyle/" rel="prev" title="A Neural Algorithm of Artistic Style">
-                A Neural Algorithm of Artistic Style <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -517,7 +548,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABSTRCT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Datasets"><span class="nav-number">3.</span> <span class="nav-text">Datasets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Results"><span class="nav-number">4.</span> <span class="nav-text">Results</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ABSTRACT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRACT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Methods"><span class="nav-number">2.</span> <span class="nav-text">Methods</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Few-shotlearningbyﬁne-tuning"><span class="nav-number">3.</span> <span class="nav-text">Few-shotlearningbyﬁne-tuning</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Comparing-CADA-VAE-on-Benchmark-Datasets"><span class="nav-number">4.</span> <span class="nav-text">Comparing CADA-VAE on Benchmark Datasets</span></a></li></ol></div>
             
 
           </div>
