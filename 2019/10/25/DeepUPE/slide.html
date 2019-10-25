@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-        <title>A Style-Based Generator Architecture for Generative Adversarial Networks</title>
+        <title>Underexposed Photo Enhancement Using Deep Illumination Estimation</title>
 
         <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/css/reveal.min.css">
         
@@ -64,50 +64,132 @@
                          data-separator="^\n---\n"
                          data-separator-vertical="^\n--\n"
                          data-separator-notes="^Note:">
-                    <script type="text/template">A Style-Based Generator Architecture for Generative Adversarial Networks
+                    <script type="text/template">Underexposed Photo Enhancement Using Deep Illumination Estimation
 
 
 
 
---
+---
+
+![1571982888330](\DeepUPE\1571982888330.png)
+
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 
 
 
-![1558335696593](E:\home\clearlovewl.github.io\source\_posts\assets\1558335696593.png)
 
 
 
 
+
+
+
+
+
+
+---
 
 
 # ABSTRACT
 
-1. we 
+--
+
+- This paper presents a new neural network for enhancing underexposed photos. Instead of directly learning an image-to-image mapping as previous work, we introduce intermediate illumination in our network to associate the input with expected enhancement result, which augments the network's capability to learn complex photographic adjustment from expert-retouched input/output image pairs.
+
+
+
+---
+
+
+
+# CONTRIBUTION
+
+--
+
+1. We propose a network for enhancing underexposed photos by estimating an image-to-illumination mapping, and design a new loss function based on various illumination constraints and priors.
+2. We prepare a new dataset of 3,000 underexposed images, each with an expert-retouched reference.
+3. We perform evaluation on our method using existing and new datasets, and demonstrate the superiority of our method qualitatively and quantitatively.
+
+
+
+
+
+
+
+
+
+---
+
+
+
+# Methodology
+
+--
+
+- `$$\tilde{I}=\mathcal{F}(I)$$`
+
+- `$$I=S * \tilde{I}$$`
+- `$$\mathcal{F}(I)=S^{-1} * I$$`
+
+- `$$\mathcal{L}=\sum_{i=1}^{N} \omega_{r} \mathcal{L}_{r}^{i}+\omega_{s} \mathcal{L}_{s}^{i}+\omega_{c} \mathcal{L}_{c}^{i}$$`
+
+
 
 --
 
 
-# INtroduction
 
-1.  we 
+- `$$\begin{aligned} \mathcal{L}_{r}^{i} &=\left\|I_{i}-S * \tilde{I}_{i}\right\|^{2} \\ & \text { s.t. }\left(I_{i}\right)_{c} \leq(S)_{c} \leq 1, \forall \text { pixel channel } c \end{aligned}$$`
+- `$$\mathcal{L}_{s}^{i}=\sum_{p} \sum_{c} \omega_{x, c}^{p}\left(\partial_{x} S_{p}\right)_{c}^{2}+\omega_{y, c}^{p}\left(\partial_{y} S_{p}\right)_{c}^{2}$$` `$$\begin{aligned} \omega_{x, c}^{p} &=\left(\left|\partial_{x} L_{i}^{p}\right|_{c}^{\theta}+\epsilon\right)^{-1} \text { and } \\ \omega_{y, c}^{p} &=\left(\left|\partial_{y} L_{i}^{p}\right|_{c}^{\theta}+\epsilon\right)^{-1} \end{aligned}$$`
+- `$$\mathcal{L}_{c}^{i}=\sum_{p} \angle\left(\left(\mathcal{F}\left(I_{i}\right)\right)_{p},\left(\tilde{I}_{i}\right)_{p}\right)$$` 
 
+---
 
-# Style based generator
+![1571982928361](\DeepUPE\1571982928361.png)
 
-1. 
-
-
-
-
-
-
-
-![1556107219634](\MEON\1556107219634.png)
 <!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 
-> [ppt]( https://clearlovewl.github.io/2019/04/24/MEON/slide.html)
+---
 
-> [ppt]( http://localhost:4000/2019/04/24/MEON/slide.html)</script>
+
+![1571988637064](\DeepUPE\1571988637064.png)
+
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+
+
+
+---
+
+# Experimental Results
+
+--
+
+![1571985004146](\DeepUPE\1571985004146.png)
+
+
+--
+
+![1571985085475](\DeepUPE\1571985085475.png)
+
+--
+
+![1571982828652](\DeepUPE\1571982828652.png)
+
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+
+
+
+
+
+---
+
+
+
+
+
+> [ppt]( https://clearlovewl.github.io/2019/10/25/DeepUPE/slide.html)
+
+> [ppt]( http://localhost:4000/2019/10/25/DeepUPE/slide.html)</script>
                 </section>
             </div>
         </div>
@@ -164,15 +246,15 @@ Reveal.initialize({
   // 是否在一个弹出的 iframe 中打开幻灯片中的链接
   previewLinks: false,
   // 切换过渡效果
-  transition: 'zoom', // none/fade/slide/convex/concave/zoom
+  transition: 'none', // none/fade/slide/convex/concave/zoom
   // 过渡速度
   transitionSpeed: 'default', // default/fast/slow
   // 全屏幻灯片背景的过渡效果
-  backgroundTransition: 'slide', // none/fade/slide/convex/concave/zoom
+  backgroundTransition: 'none', // none/fade/slide/convex/concave/zoom
   // 加载除当前可见的幻灯片之外的幻灯片数量
   viewDistance: 3,
   // 视差背景图片
-  parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-2.jpg',
+  parallaxBackgroundImage: ' ',
   // e.g. 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'
   // 视差背景尺寸
   parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
