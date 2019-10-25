@@ -1,0 +1,233 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <title>Fast Face-swap Using Convolutional Neural Networks</title>
+
+        <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/css/reveal.min.css">
+        
+        <!-- theme -->
+        <script>
+            var link = document.createElement( 'link' );
+            link.rel = 'stylesheet';
+            link.type = 'text/css';
+            var theme ='black';
+            switch (theme){
+                case 'black':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/black.min.css';
+                    break;
+                case 'beige':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/beige.min.css';
+                    break;
+                case 'blood':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/blood.min.css';
+                    break;
+                case 'league':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/league.min.css';
+                    break;
+                case 'moon':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/moon.min.css';
+                    break;
+                case 'night':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/night.min.css';
+                    break;
+                case 'serif':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/serif.min.css';
+                    break;
+                case 'sky':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/sky.min.css';
+                    break;
+                case 'solarized':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/solarized.min.css';
+                    break;
+                case 'white':
+                    link.href = 'https://cdn.bootcss.com/reveal.js/3.4.1/css/theme/white.min.css';
+                    break;
+                default:
+            }
+            
+            document.getElementsByTagName( 'head' )[0].appendChild( link );
+        </script>
+        <!-- Theme used for syntax highlighting of code -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/reveal.js/3.4.1/lib/css/zenburn.min.css">
+        <link href="https://cdn.bootcss.com/reveal.js/3.4.1/css/print/paper.min.css" rel="stylesheet">
+        <!-- Printing and PDF exports -->
+        
+    </head>
+    <body>
+        <div class="reveal">
+            <div class="slides">
+                <section data-markdown
+                         data-separator="^\n---\n"
+                         data-separator-vertical="^\n--\n"
+                         data-separator-notes="^Note:">
+                    <script type="text/template">Fast Face-swap Using Convolutional Neural Networks
+
+
+
+
+--
+
+
+
+本文对deepfake的最初版本Fast Face-swap Using Convolutional Neural Networks这篇论文进行科普。
+
+
+
+# 换脸过程
+
+
+
+![1566382700155](..\faceswap\1566382700155.png)
+
+
+
+输入图片，人脸关键点检测，分割对齐，输入网络（encoder 以及 decoder），反对齐 ，缝合进图片。
+
+
+
+网络结构：
+
+
+
+![1566382977351](..\faceswap\1566382977351.png)
+
+
+
+--
+
+
+
+# 深度学习实现
+
+1. 拥有A人的形象，我们希望将他/她的身份转变为B人的身份，同时保持头部姿势和表情以及完整的照明条件。在风格转移方面，我们将输入图像A的姿势和表情视为内容，并输入图像B的身份作为风格。
+
+2. 如何控制？通过损失函数：
+
+3. 内容损失：  原图（川普）与生成图（由川普换脸成尼古拉后的脸）的一个约束。即告诉神经网络，你生成的图要和原图看起来的姿势和表达是接近，相当于给了神经网络一个方向去训练，去学习。可以想象只有这个约束的话神经网络学到最后的功能是，此图不变。 具体的实现是通过VGG计算感知损失，这样在图像分类这边的语义层面两者的距离更近。
+   $$
+   \mathcal{L}_{\text {content}}(\hat{\mathbf{x}}, \mathbf{x})=\sum_{l} \mathcal{L}_{\text {content}}(\hat{\mathbf{x}}, \mathbf{x}, l)
+   $$
+
+4. 风格损失：生成图与我们的目标图（一堆尼古拉的脸）之间的约束。首先，找出姿势和表情和假川普最接近的一部分尼古拉的脸，在他们之间计算风格损失（这个约束是告诉神经网络生成的图的身份要接近尼古拉），可以想象加上这个约束过后就能够生成尼古拉的脸，并且尽可能保留川普的姿势和表情。 具体是通过计算patch-base loss，这里是计算了一堆样本的特定特征图位置的patch-base loss。
+$$
+\begin{aligned} d_{c}(\mathbf{u}, \mathbf{v}) &=1-\frac{\mathbf{u}^{\top} \mathbf{v}}{\|\mathbf{u}\| \cdot\|\mathbf{v}\|} \\ \mathcal{L}_{s t y l e}(\hat{\mathbf{x}}, \mathbf{Y}, l) &=\frac{1}{M} \sum_{i=1}^{M} d_{c}\left(\Psi_{i}\left(\Phi_{l}(\hat{\mathbf{x}})\right), \Psi_{i}\left(\Phi_{l}\left(\mathbf{y}_{N N(i)}\right)\right)\right) \end{aligned}
+$$
+
+$$
+N N(i)=\underset{j=1, \ldots, N_{b e s t}}{\arg \min } d_{c}\left(\Psi_{i}\left(\Phi_{l}(\hat{\mathbf{x}})\right), \Psi_{i}\left(\Phi_{l}\left(\mathbf{y}_{j}\right)\right)\right)
+$$
+
+# 方法的不足
+
+
+
+1. encoder decoder 只有一组。
+2. 只有一组的情况下相当于是强行通过风格转换来实现了人脸转换，即这个‘找出姿势和表情和假川普最接近的一部分尼古拉的脸，在他们之间计算风格损失’过程，训练不好网络的性能就会崩掉，而且找出这一部分 匹配的脸本身计算量消耗非常大，需要在网络特征层面计算余弦距离。
+
+
+
+</script>
+                </section>
+            </div>
+        </div>
+
+        <script src="https://cdn.bootcss.com/reveal.js/3.4.1/lib/js/head.min.js"></script>
+        <script src="https://cdn.bootcss.com/reveal.js/3.4.1/js/reveal.min.js"></script>
+
+        <script>
+// More info https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+  history: true,
+  // 是否在右下角展示控制条
+  controls: true,
+  // 是否显示演示的进度条
+  progress: true,
+  // 是否显示当前幻灯片的页数编号，也可以使用代码 “slideNumber: 'c/t'” ，表示当前页/总页数。
+  slideNumber: false,
+  // 是否将每个幻灯片改变加入到浏览器的历史记录中去
+  history: false,
+  // 是否启用键盘快捷键来导航
+  keyboard: true,
+  // 是否启用幻灯片的概览模式，可使用 "Esc" 或 "o" 键来切换概览模式
+  overview: true,
+  // 是否将幻灯片垂直居中
+  center: true,
+  // 是否在触屏设备上启用触摸滑动切换
+  touch: true,
+  // 是否循环演示
+  loop: false,
+  // 是否将演示的方向变成 RTL，即从右往左
+  rtl: false,
+  // 是否每次演示的时候，随机幻灯片的顺序
+  shuffle: false,
+  // 全局开启和关闭碎片。
+  fragments: true,
+  // 标识演示文稿是否在嵌入模式中运行，即包含在屏幕的有限部分中的
+  embedded: false,
+  // 标识当问号键被点击的时候是否应该显示一个帮助的覆盖层
+  help: true,
+  // 标识演讲者备注标志是否让所有观看者可见
+  showNotes: false,
+  // 两个幻灯片之间自动切换的时间间隔（毫秒）
+  // 当设置成 0 的时候则禁止自动切换
+  // 该值可以被幻灯片上的 “data-autoslide” 属性覆盖
+  autoSlide: 0,
+  // 当遇到用户输入的时候停止自动切换
+  autoSlideStoppable: true,
+  // 当自动滑动时，使用此方法进行导航。
+  autoSlideMethod: Reveal.navigateNext,
+  // 是否启用通过鼠标滚轮来导航幻灯片
+  mouseWheel: false,
+  // 是否在移动设备上隐藏地址栏
+  hideAddressBar: true,
+  // 是否在一个弹出的 iframe 中打开幻灯片中的链接
+  previewLinks: false,
+  // 切换过渡效果
+  transition: 'none', // none/fade/slide/convex/concave/zoom
+  // 过渡速度
+  transitionSpeed: 'default', // default/fast/slow
+  // 全屏幻灯片背景的过渡效果
+  backgroundTransition: 'none', // none/fade/slide/convex/concave/zoom
+  // 加载除当前可见的幻灯片之外的幻灯片数量
+  viewDistance: 3,
+  // 视差背景图片
+  parallaxBackgroundImage: ' ',
+  // e.g. 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'
+  // 视差背景尺寸
+  parallaxBackgroundSize: '', // CSS syntax, e.g. "2100px 900px"
+  // 移动视差背景（水平和垂直）滑动变化的数量, 例如 100
+  // - 除了指定自动计算
+  // - 设置为 0 时，禁止沿轴运动
+  parallaxBackgroundHorizontal: null,
+  parallaxBackgroundVertical: null,
+  width: 1920,
+	height: 1200,
+
+	// Factor of the display size that should remain empty around the content
+	margin: 0,
+
+	// Bounds for smallest/largest possible scale to apply to content
+	minScale: 0.9,
+	maxScale: 3,
+  // More info https://github.com/hakimel/reveal.js#dependencies
+  math: {
+		mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+		config: 'TeX-AMS-MML_HTMLorMML'  // See http://docs.mathjax.org/en/latest/config-files.html
+
+	},
+	//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML
+  dependencies: [
+    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/marked.js' },
+    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/math/math.js', async: true },
+    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/markdown/markdown.min.js' },
+    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/notes/notes.min.js', async: true },
+    { src: 'https://cdn.bootcss.com/reveal.js/3.4.1/plugin/highlight/highlight.min.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+  ]
+});
+        </script>
+    </body>
+</html>
