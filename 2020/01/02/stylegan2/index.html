@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="style,">
 
 
 
@@ -79,13 +79,22 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="wl-uestc">
-<meta property="og:url" content="http://yoursite.com/archives/2019/07/index.html">
+<meta name="description" content="StyleGAN2">
+<meta name="keywords" content="style">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Analyzing and Improving the Image Quality of StyleGAN">
+<meta property="og:url" content="http://yoursite.com/2020/01/02/stylegan2/index.html">
 <meta property="og:site_name" content="wl-uestc">
+<meta property="og:description" content="StyleGAN2">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/stylegan2/image-20200102155006196.png">
+<meta property="og:image" content="http://yoursite.com/stylegan2/image-20200102172211102.png">
+<meta property="og:image" content="http://yoursite.com/stylegan2/image-20200104125541698.png">
+<meta property="og:updated_time" content="2020-01-04T05:00:16.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wl-uestc">
+<meta name="twitter:title" content="Analyzing and Improving the Image Quality of StyleGAN">
+<meta name="twitter:description" content="StyleGAN2">
+<meta name="twitter:image" content="http://yoursite.com/stylegan2/image-20200102155006196.png">
 
 
 
@@ -115,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/archives/2019/07/">
+  <link rel="canonical" href="http://yoursite.com/2020/01/02/stylegan2/">
 
 
 
 
 
-  <title>Archive | wl-uestc</title>
+  <title>Analyzing and Improving the Image Quality of StyleGAN | wl-uestc</title>
   
 
 
@@ -140,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -224,72 +233,185 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
-
-      <span class="archive-page-counter">
-        
-        
-        
-          
-        
-        Um..! 15 posts in total. Keep on posting.
-      </span>
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
-          </div>
-        
-        
-
-        
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/02/stylegan2/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="wang lei">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="wl-uestc">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/07/03/vae/" itemprop="url">
-              
-                <span itemprop="name">Generalized Zero- and Few-Shot Learning via Aligned Variational Autoencoders</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Analyzing and Improving the Image Quality of StyleGAN</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-03T00:00:00+08:00" content="2019-07-03">
-          07-03
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-02T00:00:00+08:00">
+                2020-01-02
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
 
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+              <div class="post-description">
+                  StyleGAN2
+              </div>
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
+      
 
+      
+        <hr>
+<p><img src="\stylegan2\image-20200102155006196.png" alt="image-20200102155006196"></p>
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+<hr>
+<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><p>—</p>
+<ul>
+<li>We expose and analyze several of its characteristic artifacts, and propose changes in both model architecture and training methods to address them</li>
+</ul>
+<hr>
+<h1 id="Removing-normalization-artifacts"><a href="#Removing-normalization-artifacts" class="headerlink" title="Removing normalization artifacts"></a>Removing normalization artifacts</h1><p>—</p>
+<p><img src="\stylegan2\image-20200102172211102.png" alt="image-20200102172211102"></p>
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+<p>—</p>
+<ol>
+<li><p>The  anomaly  starts  to  appear  around 64  resolution,is present in all feature maps,  and becomes progressively stronger at higher resolutions .</p>
+</li>
+<li><p>The existence of such a consistent artifact is puzzling,  as the discriminator should be</p>
+<p>able to detect it</p>
+</li>
+</ol>
+<hr>
+<h1 id="Instance-normalization-revisited"><a href="#Instance-normalization-revisited" class="headerlink" title="Instance normalization revisited"></a>Instance normalization revisited</h1><p>—</p>
+<p><img src="\stylegan2\image-20200104125541698.png" alt="image-20200104125541698"></p>
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+<p>—</p>
+<ul>
+<li><script type="math/tex; mode=display">w_{i j k}^{\prime}=s_{i} \cdot w_{i j k}</script></li>
+<li><script type="math/tex; mode=display">\sigma_{j}=\sqrt{\sum_{i, k} w_{i j k}^{\prime}^{2}}</script></li>
+<li><script type="math/tex; mode=display">w_{i j k}^{\prime \prime}=w_{i j k}^{\prime} / \sqrt{\sum_{i, k} w_{i j k}^{\prime} 2+\epsilon}</script></li>
+</ul>
+<hr>
+<blockquote>
+<p><a href="https://clearlovewl.github.io/2020/01/02/StyleGAN2/slide.html" target="_blank" rel="noopener">ppt</a></p>
+<p><a href="http://localhost:4000/2020/01/02/StyleGAN2/slide.html" target="_blank" rel="noopener">ppt</a></p>
+</blockquote>
+
+      
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/style/" rel="tag"># style</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/10/25/DeepUPE/" rel="next" title="Underexposed Photo Enhancement Using Deep Illumination Estimation">
+                <i class="fa fa-chevron-left"></i> Underexposed Photo Enhancement Using Deep Illumination Estimation
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -297,6 +419,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -317,8 +443,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -369,6 +504,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ABSTRACT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRACT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Removing-normalization-artifacts"><span class="nav-number">2.</span> <span class="nav-text">Removing normalization artifacts</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Instance-normalization-revisited"><span class="nav-number">3.</span> <span class="nav-text">Instance normalization revisited</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -502,6 +653,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
