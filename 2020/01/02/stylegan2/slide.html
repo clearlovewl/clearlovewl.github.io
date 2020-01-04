@@ -69,7 +69,7 @@
 
 
 
----
+
 
 
 
@@ -89,30 +89,31 @@
 
 
 
----
+--
 
 
-# ABSTRACT
+### Abstract
+
+
+
+- The  style-based  GAN  architecture  (StyleGAN)  yields state-of-the-art results in data-driven unconditional generative image modeling. 
+- We expose and analyze several of its characteristic artifacts, and propose changes .
+
+
 
 --
 
-- We expose and analyze several of its characteristic artifacts, and propose changes in both model architecture and training methods to address them
 
 
-
----
-
+### Removing normalization artifacts
 
 
-# Removing normalization artifacts
-
---
 
 ![image-20200102172211102](\stylegan2\image-20200102172211102.png)
 
 <!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 
---
+
 
 1. The  anomaly  starts  to  appear  around 64  resolution,is present in all feature maps,  and becomes progressively stronger at higher resolutions .
 
@@ -128,15 +129,15 @@
 
 
 
----
-
-
-
-# Instance normalization revisited
-
-
-
 --
+
+
+
+### Instance normalization revisited
+
+
+
+
 
 ![image-20200104125541698](\stylegan2\image-20200104125541698.png)
 
@@ -147,14 +148,64 @@
 
 
 - `$$w_{i j k}^{\prime}=s_{i} \cdot w_{i j k}$$`
-- `$$\sigma_{j}=\sqrt{\sum_{i, k} w_{i j k}^{\prime}^{2}}$$`
+- `$$\sigma_{j}=\sqrt{\sum_{i, k} w_{i j k}^{\prime} 2}$$`
 - `$$w_{i j k}^{\prime \prime}=w_{i j k}^{\prime} / \sqrt{\sum_{i, k} w_{i j k}^{\prime} 2+\epsilon}$$` 
 
+--
+
+![xgt](http://p1.pstatp.com/large/pgc-image/63e594803b9a497296e0b5da8a506f81)
+<!-- .element style="border: 0; background: None; box-shadow: None" width="1000px"   -->
+
+
+--
+
+### Progressive growing revisited
 
 
 
 
----
+
+![image-20200104132949162](\stylegan2\image-20200104132949162.png)
+
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+
+--
+
+![image-20200104132640356](\stylegan2\image-20200104132640356.png)
+
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+
+--
+
+![image-20200104132504143](\stylegan2\image-20200104132504143.png)
+
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+
+--
+
+
+
+![image-20200104132329046](\stylegan2\image-20200104132329046.png)
+
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
+
+--
+
+
+![xg](http://p3.pstatp.com/large/pgc-image/75b2a06de16e4542810f048f4e475ecb)
+<!-- .element style="border: 0; background: None; box-shadow: None" width="1000px"   -->
+
+
+
+### Projection of images to latent space
+
+--
+
+![fc](http://p1.pstatp.com/large/pgc-image/7cfa83bfc64a45b1b41e72d2fc55e81b)
+<!-- .element style="border: 0; background: None; box-shadow: None" width="1000px"   -->
+
+
+--
 
 
 
