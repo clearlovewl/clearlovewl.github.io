@@ -90,11 +90,14 @@
 <meta property="og:image" content="http://yoursite.com/stylegan2/image-20200102155006196.png">
 <meta property="og:image" content="http://yoursite.com/stylegan2/image-20200102172211102.png">
 <meta property="og:image" content="http://yoursite.com/stylegan2/image-20200104125541698.png">
+<meta property="og:image" content="http://p1.pstatp.com/large/pgc-image/63e594803b9a497296e0b5da8a506f81">
 <meta property="og:image" content="http://yoursite.com/stylegan2/image-20200104132949162.png">
 <meta property="og:image" content="http://yoursite.com/stylegan2/image-20200104132640356.png">
 <meta property="og:image" content="http://yoursite.com/stylegan2/image-20200104132504143.png">
 <meta property="og:image" content="http://yoursite.com/stylegan2/image-20200104132329046.png">
-<meta property="og:updated_time" content="2020-01-04T05:32:57.405Z">
+<meta property="og:image" content="http://p3.pstatp.com/large/pgc-image/75b2a06de16e4542810f048f4e475ecb">
+<meta property="og:image" content="http://p1.pstatp.com/large/pgc-image/7cfa83bfc64a45b1b41e72d2fc55e81b">
+<meta property="og:updated_time" content="2020-01-04T06:36:44.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Analyzing and Improving the Image Quality of StyleGAN">
 <meta name="twitter:description" content="StyleGAN2">
@@ -322,20 +325,16 @@
       
 
       
-        <hr>
-<p><img src="\stylegan2\image-20200102155006196.png" alt="image-20200102155006196"></p>
+        <p><img src="\stylegan2\image-20200102155006196.png" alt="image-20200102155006196"></p>
 <!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
-<hr>
-<h1 id="ABSTRACT"><a href="#ABSTRACT" class="headerlink" title="ABSTRACT"></a>ABSTRACT</h1><p>—</p>
-<ul>
+<p>—</p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><ul>
 <li>The  style-based  GAN  architecture  (StyleGAN)  yields state-of-the-art results in data-driven unconditional generative image modeling. </li>
 <li>We expose and analyze several of its characteristic artifacts, and propose changes .</li>
 </ul>
-<hr>
-<h1 id="Removing-normalization-artifacts"><a href="#Removing-normalization-artifacts" class="headerlink" title="Removing normalization artifacts"></a>Removing normalization artifacts</h1><p>—</p>
-<p><img src="\stylegan2\image-20200102172211102.png" alt="image-20200102172211102"></p>
-<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 <p>—</p>
+<h3 id="Removing-normalization-artifacts"><a href="#Removing-normalization-artifacts" class="headerlink" title="Removing normalization artifacts"></a>Removing normalization artifacts</h3><p><img src="\stylegan2\image-20200102172211102.png" alt="image-20200102172211102"></p>
+<!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 <ol>
 <li><p>The  anomaly  starts  to  appear  around 64  resolution,is present in all feature maps,  and becomes progressively stronger at higher resolutions .</p>
 </li>
@@ -343,9 +342,8 @@
 <p>able to detect it</p>
 </li>
 </ol>
-<hr>
-<h1 id="Instance-normalization-revisited"><a href="#Instance-normalization-revisited" class="headerlink" title="Instance normalization revisited"></a>Instance normalization revisited</h1><p>—</p>
-<p><img src="\stylegan2\image-20200104125541698.png" alt="image-20200104125541698"></p>
+<p>—</p>
+<h3 id="Instance-normalization-revisited"><a href="#Instance-normalization-revisited" class="headerlink" title="Instance normalization revisited"></a>Instance normalization revisited</h3><p><img src="\stylegan2\image-20200104125541698.png" alt="image-20200104125541698"></p>
 <!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 <p>—</p>
 <ul>
@@ -353,8 +351,10 @@
 <li><script type="math/tex; mode=display">\sigma_{j}=\sqrt{\sum_{i, k} w_{i j k}^{\prime} 2}</script></li>
 <li><script type="math/tex; mode=display">w_{i j k}^{\prime \prime}=w_{i j k}^{\prime} / \sqrt{\sum_{i, k} w_{i j k}^{\prime} 2+\epsilon}</script></li>
 </ul>
-<h1 id="Progressive-growing-revisited"><a href="#Progressive-growing-revisited" class="headerlink" title="Progressive growing revisited"></a>Progressive growing revisited</h1><p>—</p>
-<p><img src="\stylegan2\image-20200104132949162.png" alt="image-20200104132949162"></p>
+<p>—</p>
+<p><img src="http://p1.pstatp.com/large/pgc-image/63e594803b9a497296e0b5da8a506f81" alt="xgt"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="1000px"   --></p>
+<p>—</p>
+<h3 id="Progressive-growing-revisited"><a href="#Progressive-growing-revisited" class="headerlink" title="Progressive growing revisited"></a>Progressive growing revisited</h3><p><img src="\stylegan2\image-20200104132949162.png" alt="image-20200104132949162"></p>
 <!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 <p>—</p>
 <p><img src="\stylegan2\image-20200104132640356.png" alt="image-20200104132640356"></p>
@@ -366,7 +366,10 @@
 <p><img src="\stylegan2\image-20200104132329046.png" alt="image-20200104132329046"></p>
 <!-- .element style="border: 0; background: None; box-shadow: None" width="2000px"   -->
 <p>—</p>
-<hr>
+<p><img src="http://p3.pstatp.com/large/pgc-image/75b2a06de16e4542810f048f4e475ecb" alt="xg"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="1000px"   --></p>
+<h3 id="Projection-of-images-to-latent-space"><a href="#Projection-of-images-to-latent-space" class="headerlink" title="Projection of images to latent space"></a>Projection of images to latent space</h3><p>—</p>
+<p><img src="http://p1.pstatp.com/large/pgc-image/7cfa83bfc64a45b1b41e72d2fc55e81b" alt="fc"><br><!-- .element style="border: 0; background: None; box-shadow: None" width="1000px"   --></p>
+<p>—</p>
 <blockquote>
 <p><a href="https://clearlovewl.github.io/2020/01/02/StyleGAN2/slide.html" target="_blank" rel="noopener">ppt</a></p>
 <p><a href="http://localhost:4000/2020/01/02/StyleGAN2/slide.html" target="_blank" rel="noopener">ppt</a></p>
@@ -532,7 +535,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ABSTRACT"><span class="nav-number">1.</span> <span class="nav-text">ABSTRACT</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Removing-normalization-artifacts"><span class="nav-number">2.</span> <span class="nav-text">Removing normalization artifacts</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Instance-normalization-revisited"><span class="nav-number">3.</span> <span class="nav-text">Instance normalization revisited</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Progressive-growing-revisited"><span class="nav-number">4.</span> <span class="nav-text">Progressive growing revisited</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">1.</span> <span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Removing-normalization-artifacts"><span class="nav-number">2.</span> <span class="nav-text">Removing normalization artifacts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Instance-normalization-revisited"><span class="nav-number">3.</span> <span class="nav-text">Instance normalization revisited</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Progressive-growing-revisited"><span class="nav-number">4.</span> <span class="nav-text">Progressive growing revisited</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Projection-of-images-to-latent-space"><span class="nav-number">5.</span> <span class="nav-text">Projection of images to latent space</span></a></li></ol></div>
             
 
           </div>
